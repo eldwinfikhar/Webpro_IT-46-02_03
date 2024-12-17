@@ -12,7 +12,7 @@ use App\Http\Controllers\ActivityController;
 Route::view('/', 'layout/index');
 Route::get('/members', [MemberController::class, 'listMembers'])->name('layout.members');
 Route::view('/gallery', 'layout.gallery');
-Route::view('/publication', 'layout.publication');
+Route::get('/publication', [PublicationController::class, 'listPublication'])->name('layout.publication');
 
 // Admin Authentication
 Route::view('/admin', 'admin/login');

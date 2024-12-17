@@ -71,37 +71,14 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach($publication as $pub)
                     <tr>
-                        <td><a href="#">Intel NUC</a></td>
-                        <td>Eldwin</td>
-                        <td>2021</td>
-                        <td>Publisher X</td>
+                        <td><a href="{{ $pub->link }}">{{ $pub->title }}</a></td>
+                        <td>{{ $pub->author }}</td>
+                        <td>{{ $pub->year }}</td>
+                        <td>{{ $pub->publisher }}</td>
                     </tr>
-                    <tr>
-                        <td><a href="#">Arduino</a></td>
-                        <td>Afryan</td>
-                        <td>2022</td>
-                        <td>Publisher Y</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">NodeMCU</a></td>
-                        <td>Cahya</td>
-                        <td>2023</td>
-                        <td>Publisher Z</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">Raspberry Pi</a></td>
-                        <td>Raka</td>
-                        <td>2024</td>
-                        <td>Publisher AA</td>
-                    </tr>
-                    <tr>
-                        <td><a href="#">NVIDIA Jetson</a></td>
-                        <td>Rafi</td>
-                        <td>2025</td>
-                        <td>Publisher AB</td>
-                    </tr>
-                    <!-- Tambahkan baris lainnya sesuai kebutuhan -->
+                    @endforeach
                 </tbody>
             </table>
         </div>

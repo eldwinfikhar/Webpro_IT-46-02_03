@@ -69,5 +69,11 @@ class PublicationController extends Controller
     { 
         $publication->delete(); 
         return redirect()->route('Publication')->with('success', 'Publication berhasil dihapus');
-    } 
+    }
+    
+    public function listPublication()
+    {
+        $publication = Publication::all();
+        return view('layout.publication', ['publication' => $publication]);
+    }
 }
