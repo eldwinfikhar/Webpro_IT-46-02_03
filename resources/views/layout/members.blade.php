@@ -61,10 +61,10 @@
     <section class="members-section">
         <div class="container">
             <h2 class="text-center">Members of HESLab</h2><br>
-            <div class="row">
+            <div class="row d-flex flex-nowrap overflow-auto">
                 <!-- Member 1 -->
+                @foreach($member as $mem)
                 <div class="col-md-3 col-sm-6 col-12 mb-4">
-                  @foreach($member as $mem)
                     <div class="card">
                         <img src="../Assets/member-dummy.png" class="card-img-top" alt={{ $mem->name }}>
                         <div class="card-body text-center">
@@ -95,8 +95,8 @@
                             </div>
                         </div>
                     </div>
-                  @endforeach
                 </div>
+                @endforeach
             </div>
         </div>
     </section>
