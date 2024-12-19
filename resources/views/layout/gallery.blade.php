@@ -48,7 +48,7 @@
                 <div class="col-md-4 mt-4">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <img src="../Assets/bg_homepage.jpeg" alt="innovillage 2023" class="mb-3" style="width: 300px;">
+                            <img src="../Assets/bg_homepage.jpeg" alt="innovillage 2023" class="mb-3" height="150">
                             <h5 class="card-title">Innovillage 2023</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
@@ -58,7 +58,7 @@
                 <div class="col-md-4 mt-4">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <img src="../Assets/embd-sys1.png" alt="Focus Group Icon" class="mb-3" style="width: 300px;">
+                            <img src="../Assets/embd-sys1.png" alt="Focus Group Icon" class="mb-3" height="150">
                             <h5 class="card-title">Embedded System</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
@@ -68,7 +68,7 @@
                 <div class="col-md-4 mt-4">
                     <div class="card h-100 text-center">
                         <div class="card-body">
-                            <img src="../Assets/hardware1.png" alt="Workshop Icon" class="mb-3" style="width: 300px;">
+                            <img src="../Assets/hardware1.png" alt="Workshop Icon" class="mb-3" height="150">
                             <h5 class="card-title">Hardware</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                         </div>
