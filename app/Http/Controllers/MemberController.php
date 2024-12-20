@@ -34,7 +34,15 @@ class MemberController extends Controller
             'github' => 'nullable|url',
             'instagram' => 'nullable|url',
             'email' => 'required|email',
+            'image' => 'nullable|image',
         ]);
+        
+        if ($request->hasFile('image'))
+        {
+            $imageName = $request->file('image')->store('images', 'public');
+            $validated['image'] = $imageName;
+        }
+
         Member::create($validated);
         return redirect()->route('Member')->with('success', 'Member berhasil ditambahkan'); 
     } 

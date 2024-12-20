@@ -125,28 +125,28 @@
     <section class="activities-section">
         <div class="container">
             <h2 class="text-center mb-5"><br>Activities</h2>
-            <div class="row text-center">
-                <div class="col-md-4 mb-4">
+            <div class="row justify-content-center text-center">
+                <div class="col-md-3 mb-4">
                     <div class="card shadow">
                         <img src="/Assets/invlg-1.png" class="card-img-top my-3" alt="Innovillage 2023">
                         <div class="card-body">
-                            <h5 class="card-title">Innovillage 2023</h5>
+                            <h5 class="card-title">Innovillage</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
                     <div class="card shadow">
                         <img src="/Assets/embd-sys1.png" class="card-img-top my-3" alt="Embedded System">
                         <div class="card-body">
-                            <h5 class="card-title">Embedded System</h5>
+                            <h5 class="card-title">Study Group</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
+                <div class="col-md-3 mb-4">
                     <div class="card shadow">
                         <img src="/Assets/hardware1.png" class="card-img-top my-3" alt="Hardware">
                         <div class="card-body">
-                            <h5 class="card-title">Hardware</h5>
+                            <h5 class="card-title">Research Group</h5>
                         </div>
                     </div>
                 </div>
@@ -225,7 +225,7 @@
     <section id="publication-section" class="publication-section">
         <div class="container">
             <h2 class="text-center mb-5">Publications</h2>
-            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"> -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row justify-content-center">
@@ -233,7 +233,7 @@
                                 <div class="card custom-card shadow"> 
                                     <img src="/Assets/dummy_publc1.png" class="card-img-top my-3" alt="...">
                                     <div class="card-body text-center">
-                                        <p class="card-text">Intel NUC</p>
+                                        <h5 class="card-text">Embedded System</h5>
                                     </div>
                                 </div>
                             </div>
@@ -241,7 +241,7 @@
                                 <div class="card custom-card shadow">
                                     <img src="/Assets/dummy_publc2.png" class="card-img-top my-3" alt="...">
                                     <div class="card-body text-center">
-                                        <p class="card-text">Arduino</p>
+                                        <h5 class="card-text">Arduino</h5>
                                     </div>
                                 </div>
                             </div>
@@ -249,7 +249,7 @@
                                 <div class="card custom-card shadow">
                                     <img src="/Assets/dummy_publc3.png" class="card-img-top my-3" alt="...">
                                     <div class="card-body text-center">
-                                        <p class="card-text">NodeMCU</p>
+                                        <h5 class="card-text">NodeMCU</h5>
                                     </div>
                                 </div>
                             </div>
@@ -265,7 +265,7 @@
                     <img src="/Assets/r-arrow.svg" alt="Next" aria-hidden="true">
                     <span class="visually-hidden">Next</span>
                 </button>
-            </div>
+            <!-- </div> -->
             <!-- View More Button -->
             <div class="d-flex justify-content-center mt-4">
                 <a href="/publication" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center" style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">

@@ -47,7 +47,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="my-4">{{$title}} Member</h1>
                     <!-- TAMBAHIN DI BAWAH SINI -->
-                    <form method="post" action="{{ $method === 'PUT' ? route('members.update', $member->id) : route('members.store') }}">
+                    <form method="post" action="{{ $method === 'PUT' ? route('members.update', $member->id): route('members.store') }}" enctype="multipart/form-data">
                         @csrf
                         @if($method === 'PUT') 
                             @method('PUT') 
@@ -58,28 +58,28 @@
                                     <td><label for="name" class="form-label">Full Name</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                                        placeholder="Enter your full name" value="{{ old('name', $member->name) }}" required>
+                                        placeholder="Enter member full name" value="{{ old('name', $member->name) }}" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="idNumber" class="form-label">ID Number</label></td>
                                     <td>
                                         <input type="number" class="form-control @error('name') is-invalid @enderror" id="idNumber" name="nim"
-                                        placeholder="Enter your NIM or NIP" value="{{ old('nim', $member->nim) }}" required>
+                                        placeholder="Enter member NIM or NIP" value="{{ old('nim', $member->nim) }}" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="major" class="form-label">Major</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('major') is-invalid @enderror" id="major" name="major"
-                                        placeholder="Enter your major" value="{{ old('major', $member->major) }}" required>
+                                        placeholder="Enter member major" value="{{ old('major', $member->major) }}" required>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="position" class="form-label">Position</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('position') is-invalid @enderror" id="position" name="position"
-                                        placeholder="Enter your position" value="{{ old('position', $member->position) }}" required>
+                                        placeholder="Enter member position" value="{{ old('position', $member->position) }}" required>
                                     </td>
                                 </tr>
                                 <tr>
@@ -107,7 +107,15 @@
                                     <td><label for="email" class="form-label">Email</label></td>
                                     <td>
                                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
-                                        placeholder="Enter your email" value="{{ old('email', $member->email) }}" required>
+                                        placeholder="Enter member email" value="{{ old('email', $member->email) }}" required>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><label for="image" class="form-label">Member Photo</label>
+                                    <td>
+                                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image"
+                                        placeholder="Enter member image" value="{{ old('image', $member->image) }}" required>
+                                        <h6 class="mt-2 fst-italic fw-normal">*picture ratio must be 1:1</h6>
                                     </td>
                                 </tr>
                                 <!-- <tr>

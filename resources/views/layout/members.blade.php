@@ -60,13 +60,17 @@
     <!-- Members Section -->
     <section class="members-section">
         <div class="container">
-            <h2 class="text-center">Members of HESLab</h2><br>
+            <h2 class="text-center mt-4">Members of HESLab</h2><br>
             <div class="row d-flex flex-nowrap overflow-auto">
                 <!-- Member 1 -->
                 @foreach($member as $mem)
                 <div class="col-md-3 col-sm-6 col-12 mb-4">
                     <div class="card">
-                        <img src="../Assets/member-dummy.png" class="card-img-top" alt={{ $mem->name }}>
+                    @if($mem->image)
+                        <img src="{{ asset('storage/' . $mem->image) }}" class="card-img-top" alt="{{ $mem->name }}">
+                    @else
+                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Default Image">
+                    @endif
                         <div class="card-body text-center">
                             <h5 class="card-title">{{ $mem->name }}</h5>
                             <p class="card-text">{{ $mem->position }}</p>

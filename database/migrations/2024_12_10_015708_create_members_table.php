@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('github',255)->nullable();
             $table->string('instagram',255)->nullable();
             $table->string('email',255);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }

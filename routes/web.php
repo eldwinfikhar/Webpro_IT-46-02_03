@@ -5,13 +5,9 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ActivityController;
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
 Route::view('/', 'layout/index');
 Route::get('/members', [MemberController::class, 'listMembers'])->name('layout.members');
-Route::view('/gallery', 'layout.gallery');
+Route::get('/gallery', [ActivityController::class, 'listAct'])->name('layout.gallery');
 Route::get('/publication', [PublicationController::class, 'listPublication'])->name('layout.publication');
 
 // Admin Authentication

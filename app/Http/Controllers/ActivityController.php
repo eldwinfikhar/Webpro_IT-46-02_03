@@ -64,5 +64,11 @@ class ActivityController extends Controller
     { 
         $activity->delete(); 
         return redirect()->route('Activity')->with('success', 'Activity berhasil dihapus');
-    } 
+    }
+
+    public function listAct()
+    {
+        $activity = Activity::all();
+        return view('layout.gallery', ['activity' => $activity]);
+    }
 }
