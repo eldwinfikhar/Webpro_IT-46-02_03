@@ -136,44 +136,18 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
-                <!-- <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card shadow">
-                        <img src="/Assets/invlg-1.png" class="card-img-top my-3"
-                            style="width: 90%; height: auto;" alt="Innovillage">
-                        <div class="card-body">
-                            <h5 class="card-title">Innovillage</h5>
-                        </div>
-                    </div>
+                @endforeach    
+                <!-- Learn More Button -->
+                <div class="d-flex justify-content-center mt-4">
+                    <a href="/gallery" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center"
+                        style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
+                        Learn More
+                    </a>
                 </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card shadow">
-                        <img src="/Assets/stdy-1.png" class="card-img-top my-3"
-                            style="width: 90%; height: auto;" alt="Study Group">
-                        <div class="card-body">
-                            <h5 class="card-title">Study Group</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card shadow">
-                        <img src="/Assets/rsrch-1.png" class="card-img-top my-3"
-                            style="width: 90%; height: auto;" alt="Research Group">
-                        <div class="card-body">
-                            <h5 class="card-title">Research Group</h5>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Learn More Button -->
-            <div class="d-flex justify-content-center mt-4">
-                <a href="/gallery" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center"
-                    style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
-                    Learn More
-                </a>
             </div>
         </div>
     </section>
+
 
     <!-- Members Section -->
     <section id="members-section" class="members-section py-5">

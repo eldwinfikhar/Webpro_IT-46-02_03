@@ -89,10 +89,6 @@
                                         placeholder="Enter publication link" value="{{ old('link', $publication->link) }}" required>
                                     </td>
                                 </tr>
-                                <!-- <tr>
-                                    <td><label for="photo" class="form-label">Upload Photo</label></td>
-                                    <td><input type="file" class="form-control" id="photo" accept="image/*" placeholder="Choose a photo" required></td>
-                                </tr> -->
                                 <tr>
                                     <td colspan="2" class="text-end">
                                         <button type="submit" class="btn btn-success" onclick="success('publication')">{{$title}} Data</button>

@@ -7,12 +7,11 @@ use App\Http\Controllers\ActivityController;
 use Illuminate\Http\Request;
 use App\Models\Activity;
 
-Route::view('/', 'layout.index', ['activity' => Activity::all()]);
+Route::view('/', 'layout.index', ['activity' => Activity::take(3)->get()]);
 Route::get('/members', [MemberController::class, 'listMembers'])->name('layout.members');
 Route::get('/gallery', [ActivityController::class, 'listAct'])->name('layout.gallery');
 Route::get('/publication', [PublicationController::class, 'listPublication'])->name('layout.publication');
 
-// Admin Authentication
 // Halaman Login
 Route::get('/login', function () {
     return view('admin/login');
