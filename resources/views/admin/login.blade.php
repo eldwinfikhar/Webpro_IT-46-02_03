@@ -38,7 +38,7 @@
               <img src="/assets/logo_heslab.svg" alt="Logo">
               <h2 class="card-title">Login</h2>
             </div>
-            <form action="/admin/members">
+            <form action="{{ route('login') }}" method="POST">
               <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
                 <input type="text" class="form-control" id="username" placeholder="Enter username" required>

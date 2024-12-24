@@ -12,7 +12,42 @@ Route::get('/gallery', [ActivityController::class, 'listAct'])->name('layout.gal
 Route::get('/publication', [PublicationController::class, 'listPublication'])->name('layout.publication');
 
 // Admin Authentication
-Route::view('/admin', 'admin/login');
+//Route::view('/admin', 'admin/login');
+
+// Halaman Login
+Route::get('/login', function () {
+    // Jika sudah login, redirect ke halaman admin
+    if (session('admin_logged_in')) {
+        return redirect('/admin/members');
+    }
+    return view('login'); // Tampilkan halaman login
+})->name('login.view');
+
+// Proses Login
+Route::post('/login', function (Request $request) {
+    // Data login admin statis
+    $admin = [
+        'username' => 'admin',
+        'password' => 'admin', // Ganti dengan password Anda
+    ];
+
+    // Validasi input
+    $request->validate([
+        'username' => 'required',
+        'password' => 'required',
+    ]);
+
+    // Cek username dan password
+    if ($request->username === $admin['username'] && $request->password === $admin['password']) {
+        // Set sesi login
+        session(['admin_logged_in' => true]);
+        return redirect('/admin/members');
+    }
+
+    // Jika gagal login
+    return redirect()->route('login.view')->withErrors(['error' => 'Invalid username or password.']);
+})->name('login');
+
 
 // Members Routes
 Route::get('/admin/members', [MemberController::class, 'index'])->name('Member');
