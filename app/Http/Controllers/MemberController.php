@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
  
 use App\Models\Member; 
 use Illuminate\Http\Request; 
+use Illuminate\Support\Facades\Storage;
 
 class MemberController extends Controller 
 { 
@@ -15,9 +16,17 @@ class MemberController extends Controller
  
     public function create() 
     { 
+        $positions = [
+            'Ketua Lab', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
+            'Koor. Integrasi Embedded', 'Koor. Data Sensor', 'Koor. Study Group',
+            'Koor. Research Group', 'Koor. Design', 'Koor. Public Relations',
+            'Anggota Research'
+        ];
+        
         return view('admin.form_members', [ 
             'title' => 'Add', 
             'member' => new Member(),
+            'positions' => $positions,
             'route' => route('members.store'), 
             'method' => 'POST',
         ]);
@@ -34,7 +43,7 @@ class MemberController extends Controller
             'github' => 'nullable|url',
             'instagram' => 'nullable|url',
             'email' => 'required|email',
-            'image' => 'nullable|image',
+            'image' => 'nullable|image|dimensions:ratio=1/1',
         ]);
         
         if ($request->hasFile('image'))
@@ -54,9 +63,17 @@ class MemberController extends Controller
  
     public function edit(Member $member) 
     { 
+        $positions = [
+            'Ketua Lab', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
+            'Koor. Integrasi Embedded', 'Koor. Data Sensor', 'Koor. Study Group',
+            'Koor. Research Group', 'Koor. Design', 'Koor. Public Relations',
+            'Anggota Research'
+        ];
+
         return view('admin.form_members', [ 
             'title' => 'Edit', 
-            'member' => $member, 
+            'member' => $member,
+            'positions' => $positions,
             'route' => route('members.update', $member), 
             'method' => 'PUT', 
         ]); 
@@ -73,7 +90,16 @@ class MemberController extends Controller
             'github' => 'nullable|url',
             'instagram' => 'nullable|url',
             'email' => 'required|email',
-        ]); 
+            'image' => 'nullable|image|dimensions:ratio=1/1',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($member->image) {
+                Storage::delete('public/' . $member->image);
+            }
+            $imageName = $request->file('image')->store('images', 'public');
+            $validated['image'] = $imageName;
+        }
  
         $member->update($validated); 
         return redirect()->route('Member')->with('success', 'Member berhasil diperbarui'); 

@@ -72,7 +72,7 @@
                                             <td>{{ $act->name }}</td> 
                                             <td>{{ $act->description }}</td>
                                             <td> 
-                                                <a href="{{ route('activities.edit', $act->id) }}" class="btn btn-sm btn-warning">Edit</a> 
+                                                <a href="{{ route('activities.edit', $act->id) }}" class="btn btn-sm btn-warning mb-2">Edit</a> 
                                                 <form method="POST" action="{{ route('activities.destroy',$act->id) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')"> 
                                                     @csrf
                                                     @method('DELETE')

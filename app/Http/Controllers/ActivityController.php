@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Activity;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ActivityController extends Controller
 {
@@ -29,7 +30,15 @@ class ActivityController extends Controller
         $validated = $request->validate([ 
             'name' => 'required|string',
             'description' => 'required|string',
+            'image' => 'nullable|image|dimensions:ratio=4/3',
         ]);
+
+        if ($request->hasFile('image'))
+        {
+            $imageName = $request->file('image')->store('images', 'public');
+            $validated['image'] = $imageName;
+        }
+
         Activity::create($validated);
         return redirect()->route('Activity')->with('success', 'Activity berhasil ditambahkan'); 
     } 
@@ -54,7 +63,16 @@ class ActivityController extends Controller
         $validated = $request->validate([ 
             'name' => 'required|string',
             'description' => 'required|string',
-        ]); 
+            'image' => 'nullable|image|dimensions:ratio=4/3',
+        ]);
+
+        if ($request->hasFile('image')) {
+            if ($activity->image) {
+                Storage::delete('public/' . $activity->image);
+            }
+            $imageName = $request->file('image')->store('images', 'public');
+            $validated['image'] = $imageName;
+        }
  
         $activity->update($validated); 
         return redirect()->route('Activity')->with('success', 'Activity berhasil diperbarui'); 

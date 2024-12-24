@@ -47,7 +47,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="my-4">{{$title}} Activity</h1>
                     <!-- TAMBAHIN DI BAWAH SINI -->
-                    <form method="post" action="{{ $method === 'PUT' ? route('activities.update', $activity->id) : route('activities.store') }}">
+                    <form method="post" action="{{ $method === 'PUT' ? route('activities.update', $activity->id) : route('activities.store') }}" enctype="multipart/form-data">
                         @csrf
                         @if($method === 'PUT') 
                             @method('PUT') 
@@ -68,10 +68,20 @@
                                         placeholder="Enter activity description" value="{{ old('description', $activity->description) }}" required>
                                     </td>
                                 </tr>
-                                <!-- <tr>
-                                    <td><label for="photo" class="form-label">Upload Photo</label></td>
-                                    <td><input type="file" class="form-control" id="photo" accept="image/*" placeholder="Choose a photo" required></td>
-                                </tr> -->
+                                <tr>
+                                    <td><label for="image" class="form-label">Photo</label>
+                                    <td>
+                                        @if($activity->image)
+                                            <!-- Jika gambar tidak null -->
+                                            <img src="{{ asset('storage/' . $activity->image) }}" alt="Current Photo" class="img-thumbnail mb-3" style="width: 150px;">
+                                        @endif
+                                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
+                                            <h6 class="mt-2 fst-italic fw-normal">*picture ratio must be 4:3</h6>
+                                        @error('image')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td colspan="2" class="text-end">
                                         <button type="submit" class="btn btn-success" onclick="success('description')">{{$title}} Data</button>

@@ -126,35 +126,49 @@
         <div class="container">
             <h2 class="text-center mb-5"><br>Activities</h2>
             <div class="row justify-content-center text-center">
-                <div class="col-md-3 mb-4">
+                @foreach ($activity as $act)
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card shadow">
-                        <img src="/Assets/invlg-1.png" class="card-img-top my-3" alt="Innovillage 2023">
+                        <img src="{{ asset('storage/' . $act->image) }}" class="card-img-top my-3"
+                            style="width: 90%; height: auto;" alt="{{$act->name}}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{$act->name}}</h5>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+                <!-- <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow">
+                        <img src="/Assets/invlg-1.png" class="card-img-top my-3"
+                            style="width: 90%; height: auto;" alt="Innovillage">
                         <div class="card-body">
                             <h5 class="card-title">Innovillage</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card shadow">
-                        <img src="/Assets/embd-sys1.png" class="card-img-top my-3" alt="Embedded System">
+                        <img src="/Assets/stdy-1.png" class="card-img-top my-3"
+                            style="width: 90%; height: auto;" alt="Study Group">
                         <div class="card-body">
                             <h5 class="card-title">Study Group</h5>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-3 mb-4">
+                <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card shadow">
-                        <img src="/Assets/hardware1.png" class="card-img-top my-3" alt="Hardware">
+                        <img src="/Assets/rsrch-1.png" class="card-img-top my-3"
+                            style="width: 90%; height: auto;" alt="Research Group">
                         <div class="card-body">
                             <h5 class="card-title">Research Group</h5>
                         </div>
                     </div>
                 </div>
-            </div>
-
+            </div> -->
             <!-- Learn More Button -->
             <div class="d-flex justify-content-center mt-4">
-                <a href="/gallery" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center" style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
+                <a href="/gallery" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center"
+                    style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
                     Learn More
                 </a>
             </div>
@@ -169,7 +183,8 @@
                 <!-- Member 1 -->
                 <div class="col-md-3 mb-4">
                     <div class="card shadow-sm">
-                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Hafiz Yazid Muhammad" style="object-fit: cover; width: 100%; height: 100%;">
+                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Hafiz Yazid Muhammad"
+                            style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
                     <div class="mt-3">
                         <h5 class="mb-1">Hafiz Yazid Muhammad</h5>
@@ -184,7 +199,8 @@
                 <!-- Member 2 -->
                 <div class="col-md-3 mb-4">
                     <div class="card shadow-sm">
-                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Reihan Syahfitra Wirawan" style="object-fit: cover; width: 100%; height: 100%;">
+                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Reihan Syahfitra Wirawan"
+                            style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
                     <div class="mt-3">
                         <h5 class="mb-1">Reihan Syahfitra Wirawan</h5>
@@ -199,7 +215,8 @@
                 <!-- Member 3 -->
                 <div class="col-md-3 mb-4">
                     <div class="card shadow-sm">
-                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Febry Ayu Dyah Ganevi" style="object-fit: cover; width: 100%; height: 100%;">
+                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Febry Ayu Dyah Ganevi"
+                            style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
                     <div class="mt-3">
                         <h5 class="mb-1">Febry Ayu Dyah Ganevi</h5>
@@ -229,27 +246,30 @@
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row justify-content-center">
-                            <div class="col-md-3 mb-4">
+                            <div class="col-md-6 col-lg-3 mb-4">
                                 <div class="card custom-card shadow"> 
-                                    <img src="/Assets/dummy_publc1.png" class="card-img-top my-3" alt="...">
+                                    <img src="/Assets/embedded-1.png" class="card-img-top my-3"
+                                        style="width: 90%; height: auto;" alt="Embedded System">
                                     <div class="card-body text-center">
                                         <h5 class="card-text">Embedded System</h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 mb-4">
+                            <div class="col-md-6 col-lg-3 mb-4">
                                 <div class="card custom-card shadow">
-                                    <img src="/Assets/dummy_publc2.png" class="card-img-top my-3" alt="...">
+                                    <img src="/Assets/iot-1.png" class="card-img-top my-3"
+                                        style="width: 90%; height: auto;" alt="Internet of Things">
                                     <div class="card-body text-center">
-                                        <h5 class="card-text">Arduino</h5>
+                                        <h5 class="card-text">IoT</h5>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-3 mb-4">
+                            <div class="col-md-6 col-lg-3 mb-4">
                                 <div class="card custom-card shadow">
-                                    <img src="/Assets/dummy_publc3.png" class="card-img-top my-3" alt="...">
+                                    <img src="/Assets/quadrotor-1.png" class="card-img-top my-3"
+                                        style="width: 90%; height: auto;" alt="Quadrotor">
                                     <div class="card-body text-center">
-                                        <h5 class="card-text">NodeMCU</h5>
+                                        <h5 class="card-text">Quadrotor</h5>
                                     </div>
                                 </div>
                             </div>

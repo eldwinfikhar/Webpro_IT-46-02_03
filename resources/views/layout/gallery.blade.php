@@ -43,12 +43,17 @@
     <section class="py-5 bg-light">
         <div class="container">
             <h3 class="text-center mb-4">Our Activities</h3>
-            <div class="row">
+            <div class="row justify-content-center text-center">
                 @foreach($activity as $act)
-                <div class="col-md-4 mt-4">
-                    <div class="card h-100 text-center">
+                <div class="col-md-6 col-lg-4 mt-4">
+                    <div class="card shadow">
                         <div class="card-body">
-                            <img src="../Assets/bg_homepage.jpeg" alt="innovillage 2023" class="mb-3 img-fluid" height="150">
+                        @if($act->image)
+                            <img src="{{ asset('storage/' . $act->image) }}" class="card-img-top my-3" style="width: 90%; height: auto;" alt="{{ $act->name }}">
+                        @else
+                            <img src="/Assets/activity-dummy.png" class="card-img-top" alt="Default Image">
+                        @endif
+                            <!-- <img src="../Assets/bg_homepage.jpeg" alt="innovillage 2023" class="mb-3 img-fluid" height="150"> -->
                             <h5 class="card-title">{{$act->name}}</h5>
                             <p class="card-text">{{$act->description}}</p>
                         </div>

@@ -61,10 +61,9 @@
     <section class="members-section">
         <div class="container">
             <h2 class="text-center mt-4">Members of HESLab</h2><br>
-            <div class="row d-flex flex-nowrap overflow-auto">
-                <!-- Member 1 -->
+            <div class="row d-flex overflow-auto justify-content-start">
                 @foreach($member as $mem)
-                <div class="col-md-3 col-sm-6 col-12 mb-4">
+                <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card">
                     @if($mem->image)
                         <img src="{{ asset('storage/' . $mem->image) }}" class="card-img-top" alt="{{ $mem->name }}">

@@ -47,7 +47,7 @@
                 <div class="container-fluid px-4">
                     <h1 class="my-4">{{$title}} Member</h1>
                     <!-- TAMBAHIN DI BAWAH SINI -->
-                    <form method="post" action="{{ $method === 'PUT' ? route('members.update', $member->id): route('members.store') }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ $method === 'PUT' ? route('members.update',$member->id):route('members.store') }}" enctype="multipart/form-data">
                         @csrf
                         @if($method === 'PUT') 
                             @method('PUT') 
@@ -78,8 +78,14 @@
                                 <tr>
                                     <td><label for="position" class="form-label">Position</label></td>
                                     <td>
-                                        <input type="text" class="form-control @error('position') is-invalid @enderror" id="position" name="position"
-                                        placeholder="Enter member position" value="{{ old('position', $member->position) }}" required>
+                                        <select class="form-control @error('position') is-invalid @enderror" id="position" name="position" required>
+                                            <option value="" disabled selected>Choose a position</option>
+                                            @foreach($positions as $position)
+                                                <option value="{{ $position }}" {{ old('position', $member->position) == $position ? 'selected' : '' }}>
+                                                    {{ $position }}
+                                                </option>
+                                            @endforeach
+                                        </select>
                                     </td>
                                 </tr>
                                 <tr>
@@ -113,15 +119,17 @@
                                 <tr>
                                     <td><label for="image" class="form-label">Member Photo</label>
                                     <td>
-                                        <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image"
-                                        placeholder="Enter member image" value="{{ old('image', $member->image) }}" required>
-                                        <h6 class="mt-2 fst-italic fw-normal">*picture ratio must be 1:1</h6>
+                                        @if($member->image)
+                                            <!-- Jika gambar tidak null -->
+                                            <img src="{{ asset('storage/' . $member->image) }}" alt="Current Photo" class="img-thumbnail mb-3" style="width: 150px;">
+                                        @endif
+                                            <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
+                                            <h6 class="mt-2 fst-italic fw-normal">*picture ratio must be 1:1</h6>
+                                        @error('image')
+                                            <div class="invalid-feedback">{{ $message }}</div>
+                                        @enderror
                                     </td>
                                 </tr>
-                                <!-- <tr>
-                                    <td><label for="photo" class="form-label">Upload Photo</label></td>
-                                    <td><input type="file" class="form-control" id="photo" accept="image/*" placeholder="Choose a photo" required></td>
-                                </tr> -->
                                 <tr>
                                     <td colspan="2" class="text-end">
                                         <button type="submit" class="btn btn-success" onclick="success('member')">{{$title}} Data</button>

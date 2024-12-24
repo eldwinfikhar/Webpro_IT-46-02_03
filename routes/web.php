@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ActivityController;
+use App\Models\Activity;
 
-Route::view('/', 'layout/index');
+Route::view('/', 'layout.index', ['activity' => Activity::all()]);
 Route::get('/members', [MemberController::class, 'listMembers'])->name('layout.members');
 Route::get('/gallery', [ActivityController::class, 'listAct'])->name('layout.gallery');
 Route::get('/publication', [PublicationController::class, 'listPublication'])->name('layout.publication');
