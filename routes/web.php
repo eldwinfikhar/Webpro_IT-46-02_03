@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ActivityController;
+use Illuminate\Http\Request;
 use App\Models\Activity;
 
 Route::view('/', 'layout.index', ['activity' => Activity::all()]);
@@ -12,42 +13,26 @@ Route::get('/gallery', [ActivityController::class, 'listAct'])->name('layout.gal
 Route::get('/publication', [PublicationController::class, 'listPublication'])->name('layout.publication');
 
 // Admin Authentication
-//Route::view('/admin', 'admin/login');
-
 // Halaman Login
 Route::get('/login', function () {
-    // Jika sudah login, redirect ke halaman admin
-    if (session('admin_logged_in')) {
-        return redirect('/admin/members');
-    }
-    return view('login'); // Tampilkan halaman login
-})->name('login.view');
+    return view('admin/login');
+})->name('login');
 
 // Proses Login
 Route::post('/login', function (Request $request) {
-    // Data login admin statis
-    $admin = [
-        'username' => 'admin',
-        'password' => 'admin', // Ganti dengan password Anda
-    ];
+    // Validasi username dan password
+    $username = $request->input('username');
+    $password = $request->input('password');
 
-    // Validasi input
-    $request->validate([
-        'username' => 'required',
-        'password' => 'required',
-    ]);
-
-    // Cek username dan password
-    if ($request->username === $admin['username'] && $request->password === $admin['password']) {
-        // Set sesi login
-        session(['admin_logged_in' => true]);
+    // Cek kredensial (username dan password)
+    if ($username === 'admin' && $password === 'admin') {
+        // Simpan status login ke session
+        session(['is_admin_logged_in' => true]);
         return redirect('/admin/members');
     }
 
-    // Jika gagal login
-    return redirect()->route('login.view')->withErrors(['error' => 'Invalid username or password.']);
-})->name('login');
-
+    return back()->with('error', 'Username atau password salah.');
+});
 
 // Members Routes
 Route::get('/admin/members', [MemberController::class, 'index'])->name('Member');

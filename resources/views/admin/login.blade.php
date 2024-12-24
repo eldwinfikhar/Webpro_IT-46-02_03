@@ -38,19 +38,24 @@
               <img src="/assets/logo_heslab.svg" alt="Logo">
               <h2 class="card-title">Login</h2>
             </div>
-            <form action="{{ route('login') }}" method="POST">
-              <div class="mb-3">
-                <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
-              </div>
-              <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter password" required>
-              </div>
-              <div class="d-grid mb-2">
-                <button class="btn btn-primary link-light text-decoration-none">Login</button>
-              </div>
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+            @endif
+            <form action="/login" method="POST">
+                @csrf
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="username" id="username" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="password" id="password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Login</button>
             </form>
+
           </div>
         </div>
     </div>
