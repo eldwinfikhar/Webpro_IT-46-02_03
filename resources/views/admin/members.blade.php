@@ -46,6 +46,32 @@
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="my-4">Members Dashboard</h1>
+                        <div class="row">
+                            <!-- Tampilan bar chart -->
+                            <div class="col-lg-7">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-bar me-1"></i>
+                                        Members Year
+                                    </div>
+                                    <div class="card-body d-flex justify-content-center align-items-center" style="height: 300px">
+                                        <canvas id="myBarChart" width="100%" height="50"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Tampilan pie chart -->
+                            <div class="col-lg-5">
+                                <div class="card mb-4">
+                                    <div class="card-header">
+                                        <i class="fas fa-chart-pie me-1"></i>
+                                        Members Major
+                                    </div>
+                                    <div class="card-body d-flex justify-content-center align-items-center" style="height: 300px">
+                                        <canvas id="myPieChart" width="100%" height="50"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="card mb-4">
                             <div class="card-header d-flex align-items-center">
                                 <div>
@@ -100,10 +126,27 @@
                 </footer>
             </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="{{ asset('charts/major-pie-chart.js') }}"></script>
+        <script src="{{ asset('charts/year-bar-chart.js') }}"></script>
+        <script>
+            // Pie chart jurusan
+            var categories = @json($categories);
+            var values = @json($values);
+            initPieChart(categories, values);
+
+            // Bar chart angkatan
+            var yearLabels = @json($yearLabels);
+            var yearValues = @json($yearValues);
+            initYearBarChart(yearLabels, yearValues);
+        </script>
+
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
         <script src="/datatables-simple-demo.js"></script>
+        <script src="/charts/major-pie-chart.js"></script>
+        <script src="/charts/year-bar-chart.js"></script>
     </body>
 </html>

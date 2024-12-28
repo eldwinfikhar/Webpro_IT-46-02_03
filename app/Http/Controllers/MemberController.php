@@ -11,7 +11,44 @@ class MemberController extends Controller
     public function index() 
     { 
         $member = Member::get();
-        return view('admin.members', ['member' => $member]);
+
+        $categories = ['Informatika', 'RPL', 'Teknologi Informasi', 'Data Sains'];
+        $values = [
+            Member::where('major', 'Informatika')->count(),
+            Member::where('major', 'RPL')->count(),
+            Member::where('major', 'Teknologi Informasi')->count(),
+            Member::where('major', 'Data Sains')->count(),
+        ];
+
+        $yearCounts = [];
+        foreach ($member as $mem) {
+            $nim = $mem->nim;
+            $year = null;
+
+            if (strlen($nim) == 10) {
+                $year = "20" . substr($nim, 4, 2); // Digit ke-5 dan ke-6
+            } elseif (strlen($nim) == 12) {
+                $year = "20" . substr($nim, 5, 2); // Digit ke-6 dan ke-7
+            }
+
+            if ($year) {
+                if (!isset($yearCounts[$year])) {
+                    $yearCounts[$year] = 0;
+                }
+                $yearCounts[$year]++;
+            }
+        }
+        ksort($yearCounts);
+        $yearLabels = array_keys($yearCounts);
+        $yearValues = array_values($yearCounts);
+
+        return view('admin.members', [
+            'member' => $member,
+            'categories' => $categories,
+            'values' => $values,
+            'yearLabels' => $yearLabels,
+            'yearValues' => $yearValues,
+        ]);
     }
  
     public function create() 
