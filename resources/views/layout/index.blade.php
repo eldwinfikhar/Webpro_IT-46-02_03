@@ -90,9 +90,7 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
-            <!-- <a class="navbar-brand" href="index"> -->
                 <img src="/assets/logo_heslab.svg" alt="HESLab Logo" width="80">
-            <!-- </a> -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -111,7 +109,6 @@
     <section class="hero-section bg-primary text-white text-center d-flex align-items-center justify-content-center position-relative" style="height: 508px; background-image: url('/Assets/invlg-1.png'); background-size: cover; background-position: center;">
         <!-- Overlay -->
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
-        
         <div class="container position-relative" style="z-index: 1;">
             <div class="text-overlay">
                 <h1>HARDWARE & EMBEDDED SYSTEM</h1>
@@ -119,7 +116,6 @@
             </div>
         </div>
     </section>
-
 
     <!-- Activities Section -->
     <section class="activities-section">
@@ -136,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach    
+                @endforeach
                 <!-- Learn More Button -->
                 <div class="d-flex justify-content-center mt-4">
                     <a href="/gallery" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center"
@@ -148,21 +144,20 @@
         </div>
     </section>
 
-
     <!-- Members Section -->
     <section id="members-section" class="members-section py-5">
         <div class="container">
             <h2 class="text-center mb-5">Members</h2>
             <div class="row justify-content-center text-center">
-                <!-- Member 1 -->
+                @foreach ($member as $mem)
                 <div class="col-md-3 mb-4">
                     <div class="card shadow-sm">
-                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Hafiz Yazid Muhammad"
+                        <img src="{{ asset('storage/' . $mem->image) }}" class="card-img-top" alt="{{ $mem->name }}"
                             style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
                     <div class="mt-3">
-                        <h5 class="mb-1">Hafiz Yazid Muhammad</h5>
-                        <p class="text-muted mb-2">Ketua Lab HES</p>
+                        <h5 class="mb-1">{{$mem->name}}</h5>
+                        <p class="text-muted mb-2">{{$mem->position}}</p>
                         <div class="d-flex justify-content-center">
                             <a href="#" class="me-3"><i class="bi bi-envelope"></i></a>
                             <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
@@ -170,39 +165,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- Member 2 -->
-                <div class="col-md-3 mb-4">
-                    <div class="card shadow-sm">
-                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Reihan Syahfitra Wirawan"
-                            style="object-fit: cover; width: 100%; height: 100%;">
-                    </div>
-                    <div class="mt-3">
-                        <h5 class="mb-1">Reihan Syahfitra Wirawan</h5>
-                        <p class="text-muted mb-2">Koor. Pengembangan Embedded</p>
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="me-3"><i class="bi bi-envelope"></i></a>
-                            <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Member 3 -->
-                <div class="col-md-3 mb-4">
-                    <div class="card shadow-sm">
-                        <img src="/Assets/member-dummy.png" class="card-img-top" alt="Febry Ayu Dyah Ganevi"
-                            style="object-fit: cover; width: 100%; height: 100%;">
-                    </div>
-                    <div class="mt-3">
-                        <h5 class="mb-1">Febry Ayu Dyah Ganevi</h5>
-                        <p class="text-muted mb-2">Sekretaris</p>
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="me-3"><i class="bi bi-envelope"></i></a>
-                            <a href="#" class="me-3"><i class="bi bi-linkedin"></i></a>
-                            <a href="#"><i class="bi bi-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                @endforeach
             <!-- View More Button -->
             <div class="d-flex justify-content-center mt-4">
                 <a href="/members" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center" style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
@@ -216,12 +179,11 @@
     <section id="publication-section" class="publication-section">
         <div class="container">
             <h2 class="text-center mb-5">Publications</h2>
-            <!-- <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"> -->
                 <div class="carousel-inner">
                     <div class="carousel-item active">
                         <div class="row justify-content-center">
                             <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card custom-card shadow"> 
+                                <div class="card custom-card shadow">
                                     <img src="/Assets/embedded-1.png" class="card-img-top my-3"
                                         style="width: 90%; height: auto;" alt="Embedded System">
                                     <div class="card-body text-center">
@@ -249,7 +211,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Tambahkan item lainnya jika perlu -->
                 </div>
                 <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
                     <img src="/Assets/l-arrow.svg" alt="Previous" aria-hidden="true">
@@ -259,7 +220,6 @@
                     <img src="/Assets/r-arrow.svg" alt="Next" aria-hidden="true">
                     <span class="visually-hidden">Next</span>
                 </button>
-            <!-- </div> -->
             <!-- View More Button -->
             <div class="d-flex justify-content-center mt-4">
                 <a href="/publication" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center" style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">

@@ -46,11 +46,10 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="my-4">{{$title}} Activity</h1>
-                    <!-- TAMBAHIN DI BAWAH SINI -->
                     <form method="post" action="{{ $method === 'PUT' ? route('activities.update', $activity->id) : route('activities.store') }}" enctype="multipart/form-data">
                         @csrf
-                        @if($method === 'PUT') 
-                            @method('PUT') 
+                        @if($method === 'PUT')
+                            @method('PUT')
                         @endif
                         <table class="table table-borderless">
                             <tbody>
@@ -58,14 +57,20 @@
                                     <td><label for="name" class="form-label">Name</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                                        placeholder="Enter activity name" value="{{ old('name', $activity->name) }}" required>
+                                        placeholder="Enter activity name" value="{{ old('name', $activity->name) }}">
+                                        @if($errors->has('name'))
+                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="desc" class="form-label">Description</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('description') is-invalid @enderror" id="desc" name="description"
-                                        placeholder="Enter activity description" value="{{ old('description', $activity->description) }}" required>
+                                        placeholder="Enter activity description" value="{{ old('description', $activity->description) }}">
+                                        @if($errors->has('description'))
+                                            <span class="text-danger">{{ $errors->first('description') }}</span>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
@@ -90,7 +95,6 @@
                             </tbody>
                         </table>
                     </form>
-                    <!-- TAMBAHIN DI ATAS SINI -->
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">

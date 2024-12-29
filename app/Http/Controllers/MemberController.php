@@ -1,17 +1,18 @@
-<?php 
- 
-namespace App\Http\Controllers; 
- 
-use App\Models\Member; 
-use Illuminate\Http\Request; 
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Member;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
-class MemberController extends Controller 
-{ 
-    public function index() 
-    { 
+class MemberController extends Controller
+{
+    public function index()
+    {
         $member = Member::get();
 
+        // Data untuk pie chart
         $categories = ['Informatika', 'RPL', 'Teknologi Informasi', 'Data Sains'];
         $values = [
             Member::where('major', 'Informatika')->count(),
@@ -20,6 +21,7 @@ class MemberController extends Controller
             Member::where('major', 'Data Sains')->count(),
         ];
 
+        // Data untuk bar chart
         $yearCounts = [];
         foreach ($member as $mem) {
             $nim = $mem->nim;
@@ -50,30 +52,31 @@ class MemberController extends Controller
             'yearValues' => $yearValues,
         ]);
     }
- 
-    public function create() 
-    { 
+
+    public function create()
+    {
+        // Data untuk dropdown member position
         $positions = [
             'Ketua Lab', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
             'Koor. Integrasi Embedded', 'Koor. Data Sensor', 'Koor. Study Group',
             'Koor. Research Group', 'Koor. Design', 'Koor. Public Relations',
             'Anggota Research'
         ];
-        
-        return view('admin.form_members', [ 
-            'title' => 'Add', 
+
+        return view('admin.form_members', [
+            'title' => 'Add',
             'member' => new Member(),
             'positions' => $positions,
-            'route' => route('members.store'), 
+            'route' => route('members.store'),
             'method' => 'POST',
         ]);
-    } 
+    }
 
-    public function store(Request $request) 
-    { 
-        $validated = $request->validate([ 
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
             'name' => 'required|string',
-            'nim' => 'required|numeric',
+            'nim' => ['required', 'numeric', 'regex:/^(\d{10}|\d{12})$/'],
             'major' => 'required|string',
             'position' => 'required|string',
             'linked' => 'required|url',
@@ -82,7 +85,7 @@ class MemberController extends Controller
             'email' => 'required|email',
             'image' => 'nullable|image|dimensions:ratio=1/1',
         ]);
-        
+
         if ($request->hasFile('image'))
         {
             $imageName = $request->file('image')->store('images', 'public');
@@ -90,16 +93,17 @@ class MemberController extends Controller
         }
 
         Member::create($validated);
-        return redirect()->route('Member')->with('success', 'Member berhasil ditambahkan'); 
-    } 
- 
-    public function show(Member $member) 
-    { 
-        return view('members.show', compact('member')); 
-    } 
- 
-    public function edit(Member $member) 
-    { 
+        return redirect()->route('Member')->with('success', 'Member berhasil ditambahkan');
+    }
+
+    public function show(Member $member)
+    {
+        return view('members.show', compact('member'));
+    }
+
+    public function edit(Member $member)
+    {
+        // Data untuk dropdown member position
         $positions = [
             'Ketua Lab', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
             'Koor. Integrasi Embedded', 'Koor. Data Sensor', 'Koor. Study Group',
@@ -107,18 +111,18 @@ class MemberController extends Controller
             'Anggota Research'
         ];
 
-        return view('admin.form_members', [ 
-            'title' => 'Edit', 
+        return view('admin.form_members', [
+            'title' => 'Edit',
             'member' => $member,
             'positions' => $positions,
-            'route' => route('members.update', $member), 
-            'method' => 'PUT', 
-        ]); 
+            'route' => route('members.update', $member),
+            'method' => 'PUT',
+        ]);
     }
 
-    public function update(Request $request, Member $member) 
-    { 
-        $validated = $request->validate([ 
+    public function update(Request $request, Member $member)
+    {
+        $validated = $request->validate([
             'name' => 'required|string',
             'nim' => 'required|numeric',
             'major' => 'required|string',
@@ -137,20 +141,25 @@ class MemberController extends Controller
             $imageName = $request->file('image')->store('images', 'public');
             $validated['image'] = $imageName;
         }
- 
-        $member->update($validated); 
-        return redirect()->route('Member')->with('success', 'Member berhasil diperbarui'); 
-    } 
 
-    public function destroy(Member $member) 
-    { 
-        $member->delete(); 
+        $member->update($validated);
+        return redirect()->route('Member')->with('success', 'Member berhasil diperbarui');
+    }
+
+    public function destroy(Member $member)
+    {
+        $member->delete();
         return redirect()->route('Member')->with('success', 'Member berhasil dihapus');
-    } 
+    }
 
     public function listMembers()
     {
-        $member = Member::all();
+        // Mengurutkan member berdasarkan posisi
+        $member = Member::orderByRaw(
+            "FIELD(position, 'Ketua Lab', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
+            'Koor. Integrasi Embedded', 'Koor. Data Sensor', 'Koor. Study Group', 'Koor. Research Group',
+            'Koor. Design', 'Koor. Public Relations', 'Anggota Research')"
+        )->get();
         return view('layout.members', ['member' => $member]);
     }
 }

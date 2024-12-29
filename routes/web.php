@@ -6,7 +6,15 @@ use App\Http\Controllers\PublicationController;
 use App\Http\Controllers\ActivityController;
 use Illuminate\Http\Request;
 use App\Models\Activity;
+use App\Models\Member;
 
+Route::view('/', 'layout.index', [
+    'activity' => Activity::take(3)->get(),
+    'member' => Member::take(3)->get()
+]);
+Route::get('/members', [MemberController::class, 'listMembers'])->name('layout.members');
+Route::get('/gallery', [ActivityController::class, 'listAct'])->name('layout.gallery');
+Route::get('/publication', [PublicationController::class, 'listPublication'])->name('layout.publication');
 Route::view('/', 'layout.index', ['activity' => Activity::take(3)->get()]);
 Route::get('/members', [MemberController::class, 'listMembers'])->name('layout.members');
 Route::get('/gallery', [ActivityController::class, 'listAct'])->name('layout.gallery');

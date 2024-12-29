@@ -46,11 +46,10 @@
             <main>
                 <div class="container-fluid px-4">
                     <h1 class="my-4">{{$title}} Member</h1>
-                    <!-- TAMBAHIN DI BAWAH SINI -->
                     <form method="post" action="{{ $method === 'PUT' ? route('members.update',$member->id):route('members.store') }}" enctype="multipart/form-data">
                         @csrf
-                        @if($method === 'PUT') 
-                            @method('PUT') 
+                        @if($method === 'PUT')
+                            @method('PUT')
                         @endif
                         <table class="table table-borderless">
                             <tbody>
@@ -58,27 +57,36 @@
                                     <td><label for="name" class="form-label">Full Name</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                                        placeholder="Enter member full name" value="{{ old('name', $member->name) }}" required>
+                                        placeholder="Enter member full name" value="{{ old('name', $member->name) }}">
+                                        @if($errors->has('name'))
+                                            <span class="text-danger">{{ $errors->first('name') }}</span>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="idNumber" class="form-label">ID Number</label></td>
                                     <td>
-                                        <input type="number" class="form-control @error('name') is-invalid @enderror" id="idNumber" name="nim"
-                                        placeholder="Enter member NIM or NIP" value="{{ old('nim', $member->nim) }}" required>
+                                        <input type="number" class="form-control @error('nim') is-invalid @enderror" id="idNumber" name="nim"
+                                        placeholder="Enter member NIM" value="{{ old('nim', $member->nim) }}">
+                                        @if($errors->has('nim'))
+                                            <span class="text-danger">{{ $errors->first('nim') }}</span>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="major" class="form-label">Major</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('major') is-invalid @enderror" id="major" name="major"
-                                        placeholder="Enter member major" value="{{ old('major', $member->major) }}" required>
+                                        placeholder="Enter member major" value="{{ old('major', $member->major) }}">
+                                        @if($errors->has('major'))
+                                            <span class="text-danger">{{ $errors->first('major') }}</span>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="position" class="form-label">Position</label></td>
                                     <td>
-                                        <select class="form-control @error('position') is-invalid @enderror" id="position" name="position" required>
+                                        <select class="form-control @error('position') is-invalid @enderror" id="position" name="position">
                                             <option value="" disabled selected>Choose a position</option>
                                             @foreach($positions as $position)
                                                 <option value="{{ $position }}" {{ old('position', $member->position) == $position ? 'selected' : '' }}>
@@ -86,13 +94,19 @@
                                                 </option>
                                             @endforeach
                                         </select>
+                                        @if($errors->has('position'))
+                                            <span class="text-danger">{{ $errors->first('position') }}</span>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
                                     <td><label for="linked" class="form-label">LinkedIn</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('linked') is-invalid @enderror" id="linked" name="linked"
-                                        placeholder="https://www.linkedin.com/in/username" value="{{ old('linked', $member->linked) }}" required>
+                                        placeholder="https://www.linkedin.com/in/username" value="{{ old('linked', $member->linked) }}">
+                                        @if($errors->has('linked'))
+                                            <span class="text-danger">{{ $errors->first('linked') }}</span>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
@@ -113,7 +127,10 @@
                                     <td><label for="email" class="form-label">Email</label></td>
                                     <td>
                                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
-                                        placeholder="Enter member email" value="{{ old('email', $member->email) }}" required>
+                                        placeholder="Enter member email" value="{{ old('email', $member->email) }}">
+                                        @if($errors->has('email'))
+                                            <span class="text-danger">{{ $errors->first('email') }}</span>
+                                        @endif
                                     </td>
                                 </tr>
                                 <tr>
@@ -138,7 +155,6 @@
                             </tbody>
                         </table>
                     </form>
-                    <!-- TAMBAHIN DI ATAS SINI -->
                 </div>
             </main>
             <footer class="py-4 bg-light mt-auto">
