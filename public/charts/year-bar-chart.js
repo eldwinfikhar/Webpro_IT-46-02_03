@@ -3,7 +3,6 @@ Chart.defaults.font.family = '-apple-system,system-ui,BlinkMacSystemFont,"Segoe 
 Chart.defaults.color = '#292b2c';
 
 // Bar Chart Example
-// Bar Chart (Jumlah Anggota per Angkatan)
 function initYearBarChart(yearLabels, yearValues) {
   var ctx = document.getElementById("myBarChart");
   if (ctx) {
