@@ -48,8 +48,8 @@
                     <h1 class="my-4">{{$title}} Activity</h1>
                     <form method="post" action="{{ $method === 'PUT' ? route('activities.update', $activity->id) : route('activities.store') }}" enctype="multipart/form-data">
                         @csrf
-                        @if($method === 'PUT')
-                            @method('PUT')
+                        @if($method === 'PUT') 
+                            @method('PUT') 
                         @endif
                         <table class="table table-borderless">
                             <tbody>
@@ -113,4 +113,3 @@
     <script src="/datatables-simple-demo.js"></script>
 </body>
 </html>
-

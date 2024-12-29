@@ -48,8 +48,8 @@
                     <h1 class="my-4">{{$title}} Member</h1>
                     <form method="post" action="{{ $method === 'PUT' ? route('members.update',$member->id):route('members.store') }}" enctype="multipart/form-data">
                         @csrf
-                        @if($method === 'PUT')
-                            @method('PUT')
+                        @if($method === 'PUT') 
+                            @method('PUT') 
                         @endif
                         <table class="table table-borderless">
                             <tbody>

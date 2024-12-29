@@ -132,7 +132,7 @@
                         </div>
                     </div>
                 </div>
-                @endforeach
+                @endforeach    
                 <!-- Learn More Button -->
                 <div class="d-flex justify-content-center mt-4">
                     <a href="/gallery" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center"
@@ -183,7 +183,7 @@
                     <div class="carousel-item active">
                         <div class="row justify-content-center">
                             <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card custom-card shadow">
+                                <div class="card custom-card shadow"> 
                                     <img src="/Assets/embedded-1.png" class="card-img-top my-3"
                                         style="width: 90%; height: auto;" alt="Embedded System">
                                     <div class="card-body text-center">

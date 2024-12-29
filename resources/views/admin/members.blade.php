@@ -81,9 +81,9 @@
                                 <a href="{{ route('members.create') }}"class="btn btn-success ms-auto link-light text-decoration-none">Add member +</a>
                             </div>
                             <div class="card-body">
-                            @if(session('success'))
-                                <div class="alert alert-success">{{ session('success') }}</div>
-                            @endif
+                            @if(session('success')) 
+                                <div class="alert alert-success">{{ session('success') }}</div> 
+                            @endif 
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
@@ -96,20 +96,20 @@
                                     </thead>
                                     <tbody>
                                         @foreach($member as $mem)
-                                        <tr>
-                                            <td>{{ $mem->name }}</td>
+                                        <tr> 
+                                            <td>{{ $mem->name }}</td> 
                                             <td>{{ $mem->nim }}</td>
-                                            <td>{{ $mem->major }}</td>
-                                            <td>{{ $mem->position }}</td>
-                                            <td>
-                                                <a href="{{ route('members.edit', $mem->id) }}" class="btn btn-sm btn-warning">Edit</a>
-                                                <form method="POST" action="{{ route('members.destroy',$mem->id) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')">
+                                            <td>{{ $mem->major }}</td> 
+                                            <td>{{ $mem->position }}</td> 
+                                            <td> 
+                                                <a href="{{ route('members.edit', $mem->id) }}" class="btn btn-sm btn-warning">Edit</a> 
+                                                <form method="POST" action="{{ route('members.destroy',$mem->id) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')"> 
                                                     @csrf
                                                     @method('DELETE')
                                                     <button class="btn btn-sm btn-danger">Delete</button> 
                                                 </form>  
-                                            </td>
-                                        </tr>
+                                            </td> 
+                                        </tr>  
                                         @endforeach
                                     </tbody>
                                 </table>

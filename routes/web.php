@@ -15,10 +15,6 @@ Route::view('/', 'layout.index', [
 Route::get('/members', [MemberController::class, 'listMembers'])->name('layout.members');
 Route::get('/gallery', [ActivityController::class, 'listAct'])->name('layout.gallery');
 Route::get('/publication', [PublicationController::class, 'listPublication'])->name('layout.publication');
-Route::view('/', 'layout.index', ['activity' => Activity::take(3)->get()]);
-Route::get('/members', [MemberController::class, 'listMembers'])->name('layout.members');
-Route::get('/gallery', [ActivityController::class, 'listAct'])->name('layout.gallery');
-Route::get('/publication', [PublicationController::class, 'listPublication'])->name('layout.publication');
 
 // Halaman Login
 Route::get('/login', function () {

@@ -48,8 +48,8 @@
                     <h1 class="my-4">{{$title}} Publication</h1>
                     <form method="post" action="{{ $method === 'PUT' ? route('publications.update', $publication->id) : route('publications.store') }}">
                         @csrf
-                        @if($method === 'PUT')
-                            @method('PUT')
+                        @if($method === 'PUT') 
+                            @method('PUT') 
                         @endif
                         <table class="table table-borderless">
                             <tbody>
