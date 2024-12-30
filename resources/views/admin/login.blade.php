@@ -34,7 +34,7 @@
     <div class="container d-flex justify-content-center align-items-center">
         <div class="card" style="width: 25rem; height: fit-content; background: rgba(255, 255, 255, 0.7); border-radius: 10px;">
           <div class="card-body">
-            <div class="login-title">
+            <div class="login-title mb-3">
               <img src="/assets/logo_heslab.svg" alt="Logo">
               <h2 class="card-title">Login</h2>
             </div>

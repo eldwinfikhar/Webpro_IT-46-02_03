@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HESLab Homepage</title>
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .hero-section {
@@ -12,70 +13,6 @@
             text-align: center;
             position: relative;
         }
-
-        .hero-section h1 {
-            font-weight: bold;
-        }
-
-        .hero-content img {
-            width: 100%;
-            height: 508px;
-            opacity: 0.8;
-            display: block;
-        }
-
-        .text-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            text-align: center;
-            z-index: 1;
-        }
-
-        .text-overlay h1 {
-            font-size: 3rem;
-            margin: 0;
-        }
-
-        .text-overlay p {
-            font-size: 1.5rem;
-        }
-
-        .research-section, .publication-section {
-            padding: 60px 0;
-        }
-        .footer {
-            background: #0033A0;
-            color: white;
-            padding: 30px 0;
-        }
-        .map {
-            height: 300px;
-            background-color: #f0f0f0;
-        }
-        .footer .container {
-            text-align: center;
-        }
-        .footer a {
-            color: #fff;
-        }
-
-        .custom-card {
-            border-radius: 8px;
-        }
-
-        .custom-prev img, .custom-next img {
-            width: 30px;
-            height: 30px;
-        }
-
-        .custom-prev, .custom-next {
-            background: none;
-            border: none;
-        }
-
         .card-img-top {
             width: 130px;
             height: 126px;
@@ -83,7 +20,6 @@
             object-fit: cover;
             margin: 0 auto;
         }
-
     </style>
 </head>
 <body style="padding-top: 70px;">
@@ -212,14 +148,6 @@
                         </div>
                     </div>
                 </div>
-                <button class="carousel-control-prev custom-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                    <img src="/Assets/l-arrow.svg" alt="Previous" aria-hidden="true">
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next custom-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                    <img src="/Assets/r-arrow.svg" alt="Next" aria-hidden="true">
-                    <span class="visually-hidden">Next</span>
-                </button>
             <!-- View More Button -->
             <div class="d-flex justify-content-center mt-4">
                 <a href="/publication" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center" style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">

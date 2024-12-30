@@ -4,37 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HESLab Publication</title>
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* Custom CSS */
-        .hero-section {
-            background-color: #0033A0;
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-        }
-        .hero-section h1 {
-            font-weight: bold;
-        }
-        .research-section, .publication-section {
-            padding: 60px 0;
-        }
-        .footer {
-            background-color: #0033A0;
-            color: white;
-            padding: 30px 0;
-        }
-        .map {
-            height: 300px;
-            background-color: #f0f0f0;
-        }
-        .footer .container {
-            text-align: center;
-        }
-        .footer a {
-            color: #fff;
-        }
-    </style>
 </head>
 <body>
     <!-- Navbar -->
