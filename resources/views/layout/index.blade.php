@@ -27,7 +27,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div class="container">
                 <img src="/assets/logo_heslab.svg" alt="HESLab Logo" width="80">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -42,7 +43,8 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section bg-primary text-white text-center d-flex align-items-center justify-content-center position-relative" style="height: 508px; background-image: url('/Assets/invlg-1.png'); background-size: cover; background-position: center;">
+    <section class="hero-section bg-primary text-white text-center d-flex align-items-center justify-content-center position-relative animate-on-scroll"
+        style="height: 508px; background-image: url('/Assets/invlg-1.png'); background-size: cover; background-position: center;">
         <!-- Overlay -->
         <div class="position-absolute top-0 start-0 w-100 h-100 bg-dark opacity-75"></div>
         <div class="container position-relative" style="z-index: 1;">
@@ -54,9 +56,9 @@
     </section>
 
     <!-- Activities Section -->
-    <section class="activities-section">
+    <section class="activities-section animate-on-scroll">
         <div class="container">
-            <h2 class="text-center mb-5"><br>Activities</h2>
+            <h2 class="text-center py-5"><br>Activities</h2>
             <div class="row justify-content-center text-center">
                 @foreach ($activity as $act)
                 <div class="col-md-6 col-lg-3 mb-4">
@@ -71,7 +73,7 @@
                 @endforeach    
                 <!-- Learn More Button -->
                 <div class="d-flex justify-content-center mt-4">
-                    <a href="/gallery" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center"
+                    <a href="/gallery" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center btn-zoom"
                         style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
                         Learn More
                     </a>
@@ -81,9 +83,9 @@
     </section>
 
     <!-- Members Section -->
-    <section id="members-section" class="members-section py-5">
+    <section id="members-section" class="members-section animate-on-scroll">
         <div class="container">
-            <h2 class="text-center mb-5">Members</h2>
+            <h2 class="text-center py-5">Members</h2>
             <div class="row justify-content-center text-center">
                 @foreach ($member as $mem)
                 <div class="col-md-3 mb-4">
@@ -104,7 +106,8 @@
                 @endforeach
             <!-- View More Button -->
             <div class="d-flex justify-content-center mt-4">
-                <a href="/members" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center" style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
+                <a href="/members" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center btn-zoom"
+                    style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
                     View More
                 </a>
             </div>
@@ -112,45 +115,42 @@
     </section>
 
     <!-- Publications Section -->
-    <section id="publication-section" class="publication-section">
+    <section id="publication-section" class="publication-section mb-5 animate-on-scroll">
         <div class="container">
-            <h2 class="text-center mb-5">Publications</h2>
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card custom-card shadow"> 
-                                    <img src="/Assets/embedded-1.png" class="card-img-top my-3"
-                                        style="width: 90%; height: auto;" alt="Embedded System">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-text">Embedded System</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card custom-card shadow">
-                                    <img src="/Assets/iot-1.png" class="card-img-top my-3"
-                                        style="width: 90%; height: auto;" alt="Internet of Things">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-text">IoT</h5>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6 col-lg-3 mb-4">
-                                <div class="card custom-card shadow">
-                                    <img src="/Assets/quadrotor-1.png" class="card-img-top my-3"
-                                        style="width: 90%; height: auto;" alt="Quadrotor">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-text">Quadrotor</h5>
-                                    </div>
-                                </div>
-                            </div>
+            <h2 class="text-center py-5">Publications</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow"> 
+                        <img src="/Assets/embedded-1.png" class="card-img-top my-3"
+                            style="width: 90%; height: auto;" alt="Embedded System">
+                        <div class="card-body text-center">
+                            <h5 class="card-text">Embedded System</h5>
                         </div>
                     </div>
                 </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow">
+                        <img src="/Assets/iot-1.png" class="card-img-top my-3"
+                            style="width: 90%; height: auto;" alt="Internet of Things">
+                        <div class="card-body text-center">
+                            <h5 class="card-text">IoT</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card shadow">
+                        <img src="/Assets/quadrotor-1.png" class="card-img-top my-3"
+                            style="width: 90%; height: auto;" alt="Quadrotor">
+                        <div class="card-body text-center">
+                            <h5 class="card-text">Quadrotor</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <!-- View More Button -->
             <div class="d-flex justify-content-center mt-4">
-                <a href="/publication" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center" style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
+                <a href="/publication" class="btn btn-primary fw-bold d-flex align-items-center justify-content-center btn-zoom"
+                    style="width: 159px; height: 54px; border-radius: 12px; font-size: 16px;">
                     View More
                 </a>
             </div>
@@ -158,7 +158,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer animate-on-scroll">
         <div class="container">
             <img src="/Assets/white-telyu.svg">
             <p>Hardware and Embedded System Laboratorium</p>
@@ -167,10 +167,13 @@
         </div>
         <!-- Google Maps -->
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.4567174397025!2d107.62863989221058!3d-6.97117907951102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e739aef42ad7%3A0x9fb4de87210b8009!2sTelkom%20University%20Landmark%20Tower!5e0!3m2!1sen!2sid!4v1614245835280!5m2!1sen!2sid" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.4567174397025!2d107.62863989221058!3d-6.97117907951102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e739aef42ad7%3A0x9fb4de87210b8009!2sTelkom%20University%20Landmark%20Tower!5e0!3m2!1sen!2sid!4v1614245835280!5m2!1sen!2sid"
+                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
         </div>
     </footer>
 
+    <script src="/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

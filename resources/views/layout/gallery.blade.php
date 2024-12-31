@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HESLab Gallery</title>
+    <link rel="stylesheet" href="/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
@@ -13,7 +14,8 @@
             <a class="navbar-brand" href="#">
                 <img src="../Assets/logo_heslab.svg" alt="HESLab Logo" width="80">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -27,20 +29,25 @@
         </div>
     </nav>
     <!-- Large Image Section -->
-    <section class="text-center">
+    <section class="text-center animate-on-scroll">
         <img src="../Assets/HES_MEMBERS_CROP2.jpeg" alt="AI Lab Group Photo" class="img-fluid" style="width: 100%; max-height: 500px; object-fit: cover;">
     </section>
 
      <!-- About Section -->
-     <section class="py-5 text-center">
+     <section class="py-5 text-center animate-on-scroll">
         <div class="container">
             <h2>About HES Laboratory Telkom University</h2>
-            <p class="lead">Hardware and Embedded System Laboratory (HES Lab) is a specialized research facility under Communication and Information Technology Infrastructure (CITI). Located within the Faculty of Informatics at Telkom University, HES Lab focuses on the development of hardware and embedded system technologies. As a research-based laboratory, we conduct several core activities, including Research Group, Study Group, and Competition, to support our mission and contribute to the development of cutting-edge embedded systems. You can find us at TULT Room 0614, Telkom University Landmark Tower.</a></p>
+            <p class="lead">
+                Hardware and Embedded System Laboratory (HES Lab) is a specialized research facility under Communication and Information Technology Infrastructure (CITI).
+                Located within the Faculty of Informatics at Telkom University, HES Lab focuses on the development of hardware and embedded system technologies. As a research-based
+                laboratory, we conduct severalcore activities, including Research Group, Study Group, and Competition, to support our mission and contribute to the development of
+                cutting-edge embedded systems. You can find us at TULT Room 0614, Telkom University Landmark Tower.
+            </p>
         </div>
     </section>
 
     <!-- Activities Section -->
-    <section class="py-5 bg-light">
+    <section class="py-5 bg-light animate-on-scroll">
         <div class="container">
             <h3 class="text-center mb-4">Our Activities</h3>
             <div class="row justify-content-center text-center">
@@ -53,46 +60,19 @@
                         @else
                             <img src="/Assets/activity-dummy.png" class="card-img-top" alt="Default Image">
                         @endif
-                            <!-- <img src="../Assets/bg_homepage.jpeg" alt="innovillage 2023" class="mb-3 img-fluid" height="150"> -->
                             <h5 class="card-title">{{$act->name}}</h5>
                             <p class="card-text">{{$act->description}}</p>
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-md-4 mt-4">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <img src="../Assets/bg_homepage.jpeg" alt="innovillage 2023" class="mb-3" height="150">
-                            <h5 class="card-title">Innovillage 2023</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mt-4">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <img src="../Assets/embd-sys1.png" alt="Focus Group Icon" class="mb-3" height="150">
-                            <h5 class="card-title">Embedded System</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mt-4">
-                    <div class="card h-100 text-center">
-                        <div class="card-body">
-                            <img src="../Assets/hardware1.png" alt="Workshop Icon" class="mb-3" height="150">
-                            <h5 class="card-title">Hardware</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                        </div>
-                    </div>
-                </div> -->
                 @endforeach
             </div>
         </div>
     </section>
+
     <!-- Partnership Section -->
     <section class="py-5">
-        <div class="container text-center">
+        <div class="container text-center animate-on-scroll">
             <h3 class="mb-4">Collaboration</h3>
             <div class="row justify-content-center">
                 <div class="col-4 col-md-2 mb-3">
@@ -131,7 +111,8 @@
             </div>
         </div>
     </section>
-
+    
+    <script src="/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

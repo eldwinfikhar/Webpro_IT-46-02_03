@@ -101,8 +101,9 @@
 .hero-section h1 {
   font-weight: bold;
 }
-.research-section, .publication-section {
-  padding: 60px 0;
+.members-section, .publication-section,
+.activities-section {
+  padding: 30px 0;
 }
 .footer {
   background-color: #0033A0;
@@ -143,6 +144,47 @@
 }
 .custom-card {
   border-radius: 8px;
+}
+
+/* CSS Custom Tambahan - Layout */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.fade-up {
+  animation: fadeUp 0.8s ease-out forwards; 
+}
+.animate-on-scroll {
+  opacity: 0;
+}
+.navbar .nav-link {
+  transition: transform 0.3s ease;
+}
+.navbar .nav-link:hover { 
+  transform: scale(1.05);
+}
+.btn-zoom {
+  cursor: pointer;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1), 
+              box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.btn-zoom:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.btn-zoom:active {
+  transform: scale(0.98);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.card:hover {
+  transform: scale(1.075);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 /* ==================== */
 
@@ -4248,6 +4290,10 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transform: rotateX(0deg) rotateY(0deg);
+  will-change: transform;
+  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
 .card > hr {
   margin-right: 0;

@@ -14,7 +14,8 @@
             <a class="navbar-brand" href="#">
                 <img src="../Assets/logo_heslab.svg" alt="HESLab Logo" width="80">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -29,7 +30,7 @@
     </nav>
 
     <!-- Publication Section -->
-    <section class="publication-section">
+    <section class="publication-section animate-on-scroll">
         <div class="container">
             <h2 class="text-center">Publication</h2>
             <table class="table table-striped">
@@ -56,7 +57,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer animate-on-scroll">
         <div class="container">
             <img src="/Assets/white-telyu.svg">
             <p>Hardware and Embedded System Laboratorium</p>
@@ -65,6 +66,8 @@
         </div>
 
     </footer>
+    
+    <script src="/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

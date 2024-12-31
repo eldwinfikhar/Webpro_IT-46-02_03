@@ -62,3 +62,45 @@ function success(page) {
     }
     alert('Data ' + part + ' berhasil ditambahkan!')
 }
+
+// Mengecek keberadaan elemen di dalam viewport
+function isInViewport(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+    rect.top <= (window.innerHeight - 100) && 
+    rect.bottom >= 0
+    );
+}    
+// Menambahkan class 'fade-up' ketika elemen masuk viewport
+function handleScroll() {
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(el => {
+    if (isInViewport(el)) {
+        el.classList.add('fade-up');
+    }
+    });
+}
+window.addEventListener('scroll', handleScroll);
+window.addEventListener('load', handleScroll);
+
+// Menambahkan efeh hover pada card
+const cards = document.querySelectorAll('.card');
+cards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const cardRect = card.getBoundingClientRect();
+        const centerX = cardRect.left + cardRect.width / 2;
+        const centerY = cardRect.top + cardRect.height / 2;
+
+        const x = e.clientX - centerX;
+        const y = e.clientY - centerY;
+
+        const rotateX = (-y / cardRect.height) * 25;
+        const rotateY = (x / cardRect.width) * 25;
+
+        card.style.transform = `scale(1.05) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'scale(1)';
+    });
+});
