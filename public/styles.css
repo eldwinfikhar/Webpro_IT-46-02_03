@@ -182,9 +182,18 @@
   transform: scale(0.98);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
-.card:hover {
+.card-animate:hover {
   transform: scale(1.075);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.card-animate {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transform: rotateX(0deg) rotateY(0deg);
+  will-change: transform;
+}
+.table-striped tbody tr:hover {
+  background-color: rgba(150, 150, 150, 0.3); /* Abu-abu terang */
+  transition: background-color 0.05s ease;
 }
 /* ==================== */
 
@@ -4290,10 +4299,6 @@ textarea.form-control-lg {
   background-clip: border-box;
   border: var(--bs-card-border-width) solid var(--bs-card-border-color);
   border-radius: var(--bs-card-border-radius);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  transform: rotateX(0deg) rotateY(0deg);
-  will-change: transform;
-  /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
 }
 .card > hr {
   margin-right: 0;

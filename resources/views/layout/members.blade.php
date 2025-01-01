@@ -36,7 +36,7 @@
             <div class="row justify-content-start">
                 @foreach($member as $mem)
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card">
+                    <div class="card card-animate">
                     @if($mem->image)
                         <img src="{{ asset('storage/' . $mem->image) }}" class="card-img-top" alt="{{ $mem->name }}">
                     @else

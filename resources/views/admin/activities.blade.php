@@ -35,7 +35,7 @@
                                                 <form method="POST" action="{{ route('activities.destroy',$act->id) }}" style="display:inline" onsubmit="return confirm('Yakin hapus?')"> 
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button class="btn btn-sm btn-danger">Delete</button> 
+                                                    <button class="btn btn-sm btn-danger mb-2">Delete</button> 
                                                 </form>  
                                             </td> 
                                         </tr>  

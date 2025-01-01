@@ -62,7 +62,7 @@
             <div class="row justify-content-center text-center">
                 @foreach ($activity as $act)
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card shadow">
+                    <div class="card card-animate shadow">
                         <img src="{{ asset('storage/' . $act->image) }}" class="card-img-top my-3"
                             style="width: 90%; height: auto;" alt="{{$act->name}}">
                         <div class="card-body">
@@ -89,7 +89,7 @@
             <div class="row justify-content-center text-center">
                 @foreach ($member as $mem)
                 <div class="col-md-3 mb-4">
-                    <div class="card shadow-sm">
+                    <div class="card card-animate shadow-sm">
                         <img src="{{ asset('storage/' . $mem->image) }}" class="card-img-top" alt="{{ $mem->name }}"
                             style="object-fit: cover; width: 100%; height: 100%;">
                     </div>
@@ -120,7 +120,7 @@
             <h2 class="text-center py-5">Publications</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card shadow"> 
+                    <div class="card card-animate shadow"> 
                         <img src="/Assets/embedded-1.png" class="card-img-top my-3"
                             style="width: 90%; height: auto;" alt="Embedded System">
                         <div class="card-body text-center">
@@ -129,7 +129,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card shadow">
+                    <div class="card card-animate shadow">
                         <img src="/Assets/iot-1.png" class="card-img-top my-3"
                             style="width: 90%; height: auto;" alt="Internet of Things">
                         <div class="card-body text-center">
@@ -138,7 +138,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
-                    <div class="card shadow">
+                    <div class="card card-animate shadow">
                         <img src="/Assets/quadrotor-1.png" class="card-img-top my-3"
                             style="width: 90%; height: auto;" alt="Quadrotor">
                         <div class="card-body text-center">

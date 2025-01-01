@@ -30,7 +30,7 @@
     </nav>
     <!-- Large Image Section -->
     <section class="text-center animate-on-scroll">
-        <img src="../Assets/HES_MEMBERS_CROP2.jpeg" alt="AI Lab Group Photo" class="img-fluid" style="width: 100%; max-height: 500px; object-fit: cover;">
+        <img src="../Assets/HES_members.jpeg" alt="AI Lab Group Photo" class="img-fluid" style="width: 100%; max-height: 500px; object-fit: cover;">
     </section>
 
      <!-- About Section -->
@@ -53,7 +53,7 @@
             <div class="row justify-content-center text-center">
                 @foreach($activity as $act)
                 <div class="col-md-6 col-lg-4 mt-4">
-                    <div class="card shadow">
+                    <div class="card card-animate shadow">
                         <div class="card-body">
                         @if($act->image)
                             <img src="{{ asset('storage/' . $act->image) }}" class="card-img-top my-3" style="width: 90%; height: auto;" alt="{{ $act->name }}">

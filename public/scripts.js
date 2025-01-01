@@ -26,7 +26,6 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 function success(page) {
-    
     var part = "";
     if (page=="member") {
         part = "member";
@@ -84,7 +83,7 @@ window.addEventListener('scroll', handleScroll);
 window.addEventListener('load', handleScroll);
 
 // Menambahkan efeh hover pada card
-const cards = document.querySelectorAll('.card');
+const cards = document.querySelectorAll('.card-animate');
 cards.forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const cardRect = card.getBoundingClientRect();
