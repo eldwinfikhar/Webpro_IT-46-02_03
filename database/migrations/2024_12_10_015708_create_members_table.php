@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->string('name',255);
-            $table->integer('nim');
+            $table->unsignedBigInteger('nim');
             $table->string('major',127);
             $table->string('position',255)->default('Anggota Research');
             $table->string('linked',255);
