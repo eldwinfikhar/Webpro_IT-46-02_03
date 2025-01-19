@@ -75,38 +75,15 @@
         <div class="container text-center animate-on-scroll">
             <h3 class="mb-4">Collaboration</h3>
             <div class="row justify-content-center">
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/LOGO_MOTION_LAB_(label hitam transparan).png" alt="img 1" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/ai lab.png" alt="img 2" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/computing lab.png" alt="img 3" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/cci.jpeg" alt="img 4" class="img-fluid" style="max-height: 100px;">
-                </div>
+                
                 <div class="col-4 col-md-2 mb-3">
                     <img src="../Assets/fif.png" alt="img 5" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/Seal_of_the_Central_Intelligence_Agency.svg.png" alt="img 6" class="img-fluid" style="max-height: 100px;">
                 </div>
                 <div class="col-4 col-md-2 mb-3">
                     <img src="../Assets/lm-logo.svg" alt="img 7" class="img-fluid" style="max-height: 100px;">
                 </div>
                 <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/boeing.png" alt="img 8" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
                     <img src="../Assets/dls-logo-stack.svg" alt="img 9" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/porsche-dark-large-no-space-desktop-logo.png" alt="img 10" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/SpaceX_logo_black.svg.png" alt="img 11" class="img-fluid" style="max-height: 100px;">
                 </div>
             </div>
         </div>
