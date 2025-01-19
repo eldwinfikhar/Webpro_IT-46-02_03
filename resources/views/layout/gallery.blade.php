@@ -80,10 +80,13 @@
                     <img src="../Assets/fif.png" alt="img 5" class="img-fluid" style="max-height: 100px;">
                 </div>
                 <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/lm-logo.svg" alt="img 7" class="img-fluid" style="max-height: 100px;">
+                    <img src="../Assets/logo_telkom.png" alt="img 7" class="img-fluid" style="max-height: 100px;">
                 </div>
                 <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/dls-logo-stack.svg" alt="img 9" class="img-fluid" style="max-height: 100px;">
+                    <img src="../Assets/SDG.png" alt="img 9" class="img-fluid" style="max-height: 100px;">
+                </div>
+                <div class="col-4 col-md-2 mb-3">
+                    <img src="../Assets/RnEST-.png" alt="img 5" class="img-fluid" style="max-height: 100px;">
                 </div>
             </div>
         </div>
