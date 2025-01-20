@@ -60,7 +60,7 @@
     <!-- Footer -->
     <footer class="footer animate-on-scroll">
         <div class="container">
-            <img src="/Assets/white-telyu.svg">
+            <img src="/Assets/logo_telkom.png" class="img-fluid" style="max-height: 100px;">
             <p>Hardware and Embedded System Laboratorium</p>
             <p>Find us on <a href="#">@heslab</a></p>
             <p>© Copyright 2024, All rights reserved</p>
