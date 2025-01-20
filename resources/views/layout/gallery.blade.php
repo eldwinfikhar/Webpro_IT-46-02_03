@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HESLab Gallery</title>
+    <link rel="icon" href="{{ asset('assets/Logo_hes.png') }}" />
     <link rel="stylesheet" href="/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -75,7 +76,6 @@
         <div class="container text-center animate-on-scroll">
             <h3 class="mb-4">Collaboration</h3>
             <div class="row justify-content-center">
-                
                 <div class="col-4 col-md-2 mb-3">
                     <img src="../Assets/fif.png" alt="img 5" class="img-fluid" style="max-height: 100px;">
                 </div>
