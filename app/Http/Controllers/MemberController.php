@@ -57,7 +57,7 @@ class MemberController extends Controller
     {
         // Data untuk dropdown member position
         $positions = [
-            'Ketua Lab', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
+            'Koor Asisten Laboratory', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
             'Koor. Integrasi Embedded', 'Koor. Data Sensor', 'Koor. Study Group',
             'Koor. Research Group', 'Koor. Design', 'Koor. Public Relations',
             'Anggota Research'
@@ -105,7 +105,7 @@ class MemberController extends Controller
     {
         // Data untuk dropdown member position
         $positions = [
-            'Ketua Lab', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
+            'Koor Asisten Laboratory', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
             'Koor. Integrasi Embedded', 'Koor. Data Sensor', 'Koor. Study Group',
             'Koor. Research Group', 'Koor. Design', 'Koor. Public Relations',
             'Anggota Research'
@@ -156,7 +156,7 @@ class MemberController extends Controller
     {
         // Mengurutkan member berdasarkan posisi
         $member = Member::orderByRaw(
-            "FIELD(position, 'Ketua Lab', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
+            "FIELD(position, 'Koor Asisten Laboratory', 'Sekretaris', 'Bendahara', 'Koor. Embedded System',
             'Koor. Integrasi Embedded', 'Koor. Data Sensor', 'Koor. Study Group', 'Koor. Research Group',
             'Koor. Design', 'Koor. Public Relations', 'Anggota Research')"
         )->get();
