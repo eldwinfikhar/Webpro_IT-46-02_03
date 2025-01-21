@@ -24,6 +24,7 @@
                     <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link active" href="">Members</a></li> 
                     <li class="nav-item"><a class="nav-link" href="/publication">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://hesvault.site/">Peminjaman Alat Lab</a></li>
                     <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
                 </ul>
             </div>

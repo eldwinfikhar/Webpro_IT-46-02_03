@@ -7,21 +7,6 @@
     <link rel="icon" href="{{ asset('assets/Logo_hes.png') }}" />
     <link rel="stylesheet" href="/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .hero-section {
-            background-color: #0033A0;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        .card-img-top {
-            width: 130px;
-            height: 126px;
-            border-radius: 8px;
-            object-fit: cover;
-            margin: 0 auto;
-        }
-    </style>
 </head>
 <body style="padding-top: 70px;">
     <!-- Navbar -->
@@ -37,6 +22,7 @@
                     <li class="nav-item"><a class="nav-link active" href="">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#members-section">Members</a></li>
                     <li class="nav-item"><a class="nav-link" href="#publication-section">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://hesvault.site/">Peminjaman Alat Lab</a></li>
                     <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
                 </ul>
             </div>
@@ -118,32 +104,59 @@
     <!-- Publications Section -->
     <section id="publication-section" class="publication-section mb-5 animate-on-scroll">
         <div class="container">
-            <h2 class="text-center py-5">Publications</h2>
+            <h2 class="text-center py-5">Field of Research</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card card-animate shadow"> 
-                        <img src="/Assets/embedded-1.png" class="card-img-top my-3"
-                            style="width: 90%; height: auto;" alt="Embedded System">
-                        <div class="card-body text-center">
-                            <h5 class="card-text">Embedded System</h5>
+                        <img src="/Assets/embedded.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Embedded System">
+                        <div class="card-body text-center" style="height: 80px;" >
+                            <h5 class="card-text">Innovating Life Through Robotics</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card card-animate shadow">
-                        <img src="/Assets/iot-1.png" class="card-img-top my-3"
-                            style="width: 90%; height: auto;" alt="Internet of Things">
-                        <div class="card-body text-center">
-                            <h5 class="card-text">IoT</h5>
+                        <img src="/Assets/health_IoT.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Internet of Things">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">IoT in Healthcare Systems</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card card-animate shadow">
+                        <img src="/Assets/drone.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Quadrotor">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">Drone Research</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card card-animate shadow">
+                        <img src="/Assets/farming.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Quadrotor">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">Smart Technology for Sustainable Farming</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card card-animate shadow">
                         <img src="/Assets/quadrotor-1.png" class="card-img-top my-3"
-                            style="width: 90%; height: auto;" alt="Quadrotor">
-                        <div class="card-body text-center">
-                            <h5 class="card-text">Quadrotor</h5>
+                            style="width: 90%; height: 250px;" alt="Quadrotor">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">Empowering Hardware with Artificial Intelligent </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card card-animate shadow">
+                        <img src="/Assets/quadrotor-1.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Quadrotor">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">Embedded Systems with Computer Vision </h5>
                         </div>
                     </div>
                 </div>
@@ -177,4 +190,20 @@
     <script src="/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<style>
+    .hero-section {
+        background-color: #0033A0;
+        color: white;
+        text-align: center;
+        position: relative;
+    }
+    .card-img-top {
+        width: 130px;
+        height: 126px;
+        border-radius: 8px;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+</style>
 </html>
+
