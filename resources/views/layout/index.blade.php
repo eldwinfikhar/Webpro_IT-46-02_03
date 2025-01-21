@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HESLab Homepage</title>
     <link rel="icon" href="{{ asset('assets/Logo_hes.png') }}" />
-    <link rel="stylesheet" href="/styles.css">
+    <!-- <link rel="stylesheet" href="/styles.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
 <body style="padding-top: 70px;">
     <!-- Navbar -->
@@ -21,7 +23,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#members-section">Members</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#publication-section">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/publication">Publications</a></li>
                     <li class="nav-item"><a class="nav-link" href="https://hesvault.site/">Peminjaman Alat Lab</a></li>
                     <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
                 </ul>
@@ -172,20 +174,52 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer animate-on-scroll">
+    <!-- <footer class="footer animate-on-scroll">
         <div class="container">
             <img src="/Assets/logo_telkom.png" class="img-fluid" style="max-height: 100px;">
             <p>Hardware and Embedded System Laboratorium</p>
             <p>Find us on <a href="#">@heslab</a></p>
             <p>© Copyright 2024, All rights reserved</p>
         </div>
-        <!-- Google Maps -->
         <div class="map">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.4567174397025!2d107.62863989221058!3d-6.97117907951102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e739aef42ad7%3A0x9fb4de87210b8009!2sTelkom%20University%20Landmark%20Tower!5e0!3m2!1sen!2sid!4v1614245835280!5m2!1sen!2sid"
                 width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
             </iframe>
         </div>
+    </footer> -->
+
+    <footer class="footer py-2" style="background-color: #0033A0;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Google Maps -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div>
+                        <iframe class="embed-responsive-item" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.4567174397025!2d107.62863989221058!3d-6.97117907951102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e739aef42ad7%3A0x9fb4de87210b8009!2sTelkom%20University%20Landmark%20Tower!5e0!3m2!1sen!2sid!4v1614245835280!5m2!1sen!2sid" 
+                            style="border:0px; height:230px; width:600px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Logo and Text -->
+                <div class="col-md-6 text-center text-md-start text-white">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <img class="me-1" src="/Assets/telkom_putih.png" class="img-fluid" style="max-height: 100px;" alt="Telkom Logo">
+                        <img class="ms-1" src="/Assets/fif.png" class="img-fluid" style="max-height: 100px;" alt="Telkom FIF">
+                    </div>
+                    <h5 class="fw-bold">Hardware and Embedded System Laboratorium</h5>
+                    <p class="mb-1">
+                        Find us on:<br>
+                        <i class="fab fa-instagram"></i>
+                        <a class="text-white text-decoration-none" href="https://www.instagram.com/hes.lab/" target="_blank">@hes.lab</a><br>
+                        <i class="fab fa-linkedin"></i>
+                        <a class="text-white text-decoration-none" href="https://www.linkedin.com/company/hardware-and-embedded-system/" target="_blank">LinkedIn</a>
+                    </p>
+                    <p class="mb-0 text-white">© Copyright 2024, All rights reserved</p>
+                </div>
+            </div>
+        </div>
     </footer>
+
 
     <script src="/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
@@ -203,6 +237,14 @@
         border-radius: 8px;
         object-fit: cover;
         margin: 0 auto;
+    }
+    .text-white-link {
+        color: white !important;
+        text-decoration: none;
+    }
+
+    .text-white-link:hover {
+        color: #ccc; /* Warna saat hover (opsional) */
     }
 </style>
 </html>

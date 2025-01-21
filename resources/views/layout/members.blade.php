@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/styles.css">
     <link rel="icon" href="{{ asset('assets/Logo_hes.png') }}" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navbar -->
@@ -88,14 +89,24 @@
     <br>
     
     <!-- Footer -->
-    <footer class="footer animate-on-scroll">
+    <footer class="footer animate-on-scroll py-3" style="background-color: #0033A0;">
         <div class="container">
-            <img src="/Assets/logo_telkom.png" class="img-fluid" style="max-height: 100px;">
-            <p>Hardware and Embedded System Laboratorium</p>
-            <p>Find us on <a href="#">@heslab</a></p>
-            <p>© Copyright 2024, All rights reserved</p>
+                <div class="col-md-4 text-center text-md-start text-white">
+                    <h5 class="fw-bold">Hardware and Embedded System Laboratorium</h5>
+                    <p class="mb-1">
+                        Find us on:<br>
+                        <i class="fab fa-instagram"></i>
+                        <a class="text-white text-decoration-none" href="https://www.instagram.com/hes.lab/" target="_blank">@hes.lab</a><br>
+                        <i class="fab fa-linkedin"></i>
+                        <a class="text-white text-decoration-none" href="https://www.linkedin.com/company/hardware-and-embedded-system/" target="_blank">LinkedIn</a>
+                    </p>
+                    <p class="mb-0 text-white">© Copyright 2024, All rights reserved</p>
+                </div>
+            </div>
         </div>
     </footer>
+
+
     
     <script src="/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
