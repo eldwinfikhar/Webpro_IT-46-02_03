@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Admin;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class SiteController extends Controller
 {
@@ -19,10 +21,17 @@ class SiteController extends Controller
             'password' => 'required',
         ]);
 
-        if ($credentials['username'] === 'admin' && $credentials['password'] === 'h3sl4b') {
+        $admin = Admin::where('username', $credentials['username'])->first();
+
+        if ($admin && Hash::check($credentials['password'], $admin->password)) {
             session(['is_admin_logged_in' => true]);
             return redirect('/admin/members')->with('success', 'Welcome, Admin!');
         }
+
+        // if ($credentials['username'] === 'admin' && $credentials['password'] === 'h3sl4b') {
+        //     session(['is_admin_logged_in' => true]);
+        //     return redirect('/admin/members')->with('success', 'Welcome, Admin!');
+        // }
 
         return back()->with('error', 'Invalid username or password.');
     }
