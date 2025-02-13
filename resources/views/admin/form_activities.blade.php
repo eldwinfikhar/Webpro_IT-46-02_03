@@ -16,7 +16,7 @@
                                     <td><label for="name" class="form-label">Name</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name"
-                                        placeholder="Enter activity name" value="{{ old('name', $activity->name) }}">
+                                        placeholder="Enter activity name" value="{{ old('name', $activity->name) }}" maxlength="120">
                                         @if($errors->has('name'))
                                             <span class="text-danger">{{ $errors->first('name') }}</span>
                                         @endif
@@ -25,12 +25,13 @@
                                 <tr>
                                     <td><label for="desc" class="form-label">Description</label></td>
                                     <td>
-                                        <input type="text" class="form-control @error('description') is-invalid @enderror" id="desc" name="description"
-                                        placeholder="Enter activity description" value="{{ old('description', $activity->description) }}">
+                                        <textarea class="form-control @error('description') is-invalid @enderror" id="desc" name="description"
+                                        placeholder="Enter activity description" rows="4" cols="50" maxlength="490">{{ old('description', $activity->description) }}</textarea>
                                         @if($errors->has('description'))
                                             <span class="text-danger">{{ $errors->first('description') }}</span>
                                         @endif
                                     </td>
+
                                 </tr>
                                 <tr>
                                     <td><label for="image" class="form-label">Photo</label>

@@ -16,7 +16,7 @@
                                     <td><label for="title" class="form-label">Title</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title"
-                                        placeholder="Enter publication title" value="{{ old('title', $publication->title) }}">
+                                        placeholder="Enter publication title" value="{{ old('title', $publication->title) }}" maxlength="250">
                                         @if($errors->has('title'))
                                             <span class="text-danger">{{ $errors->first('title') }}</span>
                                         @endif
@@ -26,7 +26,7 @@
                                     <td><label for="author" class="form-label">Author</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('author') is-invalid @enderror" id="author" name="author"
-                                        placeholder="Enter publication author" value="{{ old('author', $publication->author) }}">
+                                        placeholder="Enter publication author" value="{{ old('author', $publication->author) }}" maxlength="250">
                                         @if($errors->has('author'))
                                             <span class="text-danger">{{ $errors->first('author') }}</span>
                                         @endif
@@ -46,7 +46,7 @@
                                     <td><label for="publisher" class="form-label">Publisher</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('publisher') is-invalid @enderror" id="publisher" name="publisher"
-                                        placeholder="Enter publisher" value="{{ old('publisher', $publication->publisher) }}">
+                                        placeholder="Enter publisher" value="{{ old('publisher', $publication->publisher) }}" maxlength="250">
                                         @if($errors->has('publisher'))
                                             <span class="text-danger">{{ $errors->first('publisher') }}</span>
                                         @endif
@@ -56,7 +56,7 @@
                                     <td><label for="link" class="form-label">Link</label></td>
                                     <td>
                                         <input type="text" class="form-control @error('link') is-invalid @enderror" id="link" name="link"
-                                        placeholder="Enter publication link" value="{{ old('link', $publication->link) }}">
+                                        placeholder="Enter publication link" value="{{ old('link', $publication->link) }}" maxlength="2080">
                                         @if($errors->has('link'))
                                             <span class="text-danger">{{ $errors->first('link') }}</span>
                                         @endif

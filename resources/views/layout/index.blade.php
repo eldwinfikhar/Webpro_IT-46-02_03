@@ -4,23 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HESLab Homepage</title>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="icon" href="{{ asset('assets/Logo_hes.png') }}" />
+    <!-- <link rel="stylesheet" href="/styles.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .hero-section {
-            background-color: #0033A0;
-            color: white;
-            text-align: center;
-            position: relative;
-        }
-        .card-img-top {
-            width: 130px;
-            height: 126px;
-            border-radius: 8px;
-            object-fit: cover;
-            margin: 0 auto;
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
 </head>
 <body style="padding-top: 70px;">
     <!-- Navbar -->
@@ -35,7 +23,8 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="#members-section">Members</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#publication-section">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/publication">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://hesvault.site/">Peminjaman Alat Lab</a></li>
                     <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
                 </ul>
             </div>
@@ -114,35 +103,62 @@
         </div>
     </section>
 
-    <!-- Publications Section -->
+    <!-- Field of Research Section -->
     <section id="publication-section" class="publication-section mb-5 animate-on-scroll">
         <div class="container">
-            <h2 class="text-center py-5">Publications</h2>
+            <h2 class="text-center py-5">Field of Research</h2>
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card card-animate shadow"> 
-                        <img src="/Assets/embedded-1.png" class="card-img-top my-3"
-                            style="width: 90%; height: auto;" alt="Embedded System">
-                        <div class="card-body text-center">
-                            <h5 class="card-text">Embedded System</h5>
+                        <img src="/Assets/embedded.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Embedded System">
+                        <div class="card-body text-center" style="height: 80px;" >
+                            <h5 class="card-text">Innovating Life Through Robotics</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card card-animate shadow">
-                        <img src="/Assets/iot-1.png" class="card-img-top my-3"
-                            style="width: 90%; height: auto;" alt="Internet of Things">
-                        <div class="card-body text-center">
-                            <h5 class="card-text">IoT</h5>
+                        <img src="/Assets/health_IoT.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Internet of Things">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">IoT in Healthcare Systems</h5>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card card-animate shadow">
-                        <img src="/Assets/quadrotor-1.png" class="card-img-top my-3"
-                            style="width: 90%; height: auto;" alt="Quadrotor">
-                        <div class="card-body text-center">
-                            <h5 class="card-text">Quadrotor</h5>
+                        <img src="/Assets/drone.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Quadrotor">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">Drone Research</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card card-animate shadow">
+                        <img src="/Assets/farming.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Quadrotor">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">Smart Technology for Sustainable Farming</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card card-animate shadow">
+                        <img src="/Assets/hw-ai.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Quadrotor">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">Empowering Hardware with Artificial Intelligent </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3 mb-4">
+                    <div class="card card-animate shadow">
+                        <img src="/Assets/hw-cv.png" class="card-img-top my-3"
+                            style="width: 90%; height: 250px;" alt="Quadrotor">
+                        <div class="card-body text-center"  style="height: 80px;">
+                            <h5 class="card-text">Embedded Systems with Computer Vision </h5>
                         </div>
                     </div>
                 </div>
@@ -157,23 +173,64 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer animate-on-scroll">
+    <footer class="footer py-2" style="background-color: #0033A0;">
         <div class="container">
-            <img src="/Assets/white-telyu.svg">
-            <p>Hardware and Embedded System Laboratorium</p>
-            <p>Find us on <a href="#">@heslab</a></p>
-            <p>© Copyright 2024, All rights reserved</p>
-        </div>
-        <!-- Google Maps -->
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.4567174397025!2d107.62863989221058!3d-6.97117907951102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e739aef42ad7%3A0x9fb4de87210b8009!2sTelkom%20University%20Landmark%20Tower!5e0!3m2!1sen!2sid!4v1614245835280!5m2!1sen!2sid"
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
+            <div class="row align-items-center">
+                <!-- Google Maps -->
+                <div class="col-md-6 mb-4 mb-md-0">
+                    <div>
+                        <iframe class="embed-responsive-item" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.4567174397025!2d107.62863989221058!3d-6.97117907951102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e739aef42ad7%3A0x9fb4de87210b8009!2sTelkom%20University%20Landmark%20Tower!5e0!3m2!1sen!2sid!4v1614245835280!5m2!1sen!2sid" 
+                            style="border:0px; height:230px; width:600px;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <!-- Logo and Text -->
+                <div class="col-md-6 text-center text-md-start text-white">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <img class="me-1" src="/Assets/telkom_putih.png" class="img-fluid" style="max-height: 100px;" alt="Telkom Logo">
+                        <img class="ms-1" src="/Assets/fif.png" class="img-fluid" style="max-height: 100px;" alt="Telkom FIF">
+                    </div>
+                    <h5 class="fw-bold">Hardware and Embedded System Laboratorium</h5>
+                    <p class="mb-1">
+                        Find us on:<br>
+                        <i class="fab fa-instagram"></i>
+                        <a class="text-white text-decoration-none" href="https://www.instagram.com/hes.lab/" target="_blank">@hes.lab</a><br>
+                        <i class="fab fa-linkedin"></i>
+                        <a class="text-white text-decoration-none" href="https://www.linkedin.com/company/hardware-and-embedded-system/" target="_blank">LinkedIn</a>
+                    </p>
+                    <p class="mb-0 text-white">© Copyright 2024, All rights reserved</p>
+                </div>
+            </div>
         </div>
     </footer>
+
 
     <script src="/scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+<style>
+    .hero-section {
+        background-color: #0033A0;
+        color: white;
+        text-align: center;
+        position: relative;
+    }
+    .card-img-top {
+        width: 130px;
+        height: 126px;
+        border-radius: 8px;
+        object-fit: cover;
+        margin: 0 auto;
+    }
+    .text-white-link {
+        color: white !important;
+        text-decoration: none;
+    }
+
+    .text-white-link:hover {
+        color: #ccc; /* Warna saat hover (opsional) */
+    }
+</style>
 </html>
+
