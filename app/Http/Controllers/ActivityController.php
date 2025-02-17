@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Intervention\Image\Facades\Image;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 use App\Models\Activity;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -38,15 +39,16 @@ class ActivityController extends Controller
             $image = $request->file('image');
             $imageName = 'activities/' . uniqid() . '.' . $image->getClientOriginalExtension();
 
-            // Proses gambar ke rasio 4:3
-            $img = Image::make($image);
-            $img->fit(800, 600); // Ubah angka sesuai kebutuhan
+            $manager = new ImageManager(new Driver());
+            $img = $manager->read($request->file('image'));
+             // Proses gambar ke rasio 4:3
+            $img->cover(800, 600);
             Storage::disk('public')->put($imageName, $img->encode());
 
             $validated['image'] = $imageName;
         }
 
-        Activity::create($validated);
+        Activity::create($validated);   
         return redirect()->route('Activity')->with('success', 'Activity berhasil ditambahkan');
     }
 
@@ -81,9 +83,10 @@ class ActivityController extends Controller
             $image = $request->file('image');
             $imageName = 'activities/' . uniqid() . '.' . $image->getClientOriginalExtension();
 
-            // Proses gambar ke rasio 4:3
-            $img = Image::make($image);
-            $img->fit(800, 600);
+            $manager = new ImageManager(new Driver());
+            $img = $manager->read($request->file('image'));
+             // Proses gambar ke rasio 4:3
+            $img->cover(800, 600);
             Storage::disk('public')->put($imageName, $img->encode());
 
             $validated['image'] = $imageName;

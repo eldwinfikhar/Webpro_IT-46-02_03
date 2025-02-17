@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Member; 
 use Illuminate\Http\Request; 
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\ImageManager;
+use Intervention\Image\Drivers\Gd\Driver;
 
 class MemberController extends Controller 
 { 
@@ -62,11 +64,17 @@ class MemberController extends Controller
             'Koor. Research Group', 'Koor. Design', 'Koor. Public Relations',
             'Anggota Research'
         ];
+
+        // Data untuk dropdown member major
+        $majors = [
+            'Informatika', 'RPL', 'Teknologi Informasi', 'Data Sains'
+        ];
         
         return view('admin.form_members', [ 
             'title' => 'Add', 
             'member' => new Member(),
             'positions' => $positions,
+            'majors' => $majors,
             'route' => route('members.store'), 
             'method' => 'POST',
         ]);
@@ -83,12 +91,20 @@ class MemberController extends Controller
             'github' => 'nullable|url',
             'instagram' => 'nullable|url',
             'email' => 'required|email',
-            'image' => 'nullable|image|dimensions:ratio=1/1',
+            'image' => 'nullable|image',
         ]);
         
         if ($request->hasFile('image'))
         {
-            $imageName = $request->file('image')->store('images', 'public');
+            $image = $request->file('image');
+            $imageName = 'members/' . uniqid() . '.' . $image->getClientOriginalExtension();
+
+            $manager = new ImageManager(new Driver());
+            $img = $manager->read($request->file('image'));
+             // Proses gambar ke rasio 1:1
+            $img->cover(1080, 1080);
+            Storage::disk('public')->put($imageName, $img->encode());
+
             $validated['image'] = $imageName;
         }
 
@@ -111,10 +127,16 @@ class MemberController extends Controller
             'Anggota Research'
         ];
 
+        // Data untuk dropdown member major
+        $majors = [
+            'Informatika', 'RPL', 'Teknologi Informasi', 'Data Sains'
+        ];
+
         return view('admin.form_members', [ 
             'title' => 'Edit', 
             'member' => $member,
             'positions' => $positions,
+            'majors' => $majors,
             'route' => route('members.update', $member), 
             'method' => 'PUT', 
         ]); 
@@ -131,14 +153,22 @@ class MemberController extends Controller
             'github' => 'nullable|url',
             'instagram' => 'nullable|url',
             'email' => 'required|email',
-            'image' => 'nullable|image|dimensions:ratio=1/1',
+            'image' => 'nullable|image',
         ]);
 
         if ($request->hasFile('image')) {
             if ($member->image) {
                 Storage::delete('public/' . $member->image);
             }
-            $imageName = $request->file('image')->store('images', 'public');
+            $image = $request->file('image');
+            $imageName = 'members/' . uniqid() . '.' . $image->getClientOriginalExtension();
+
+            $manager = new ImageManager(new Driver());
+            $img = $manager->read($request->file('image'));
+             // Proses gambar ke rasio 1:1
+            $img->cover(1080, 1080);
+            Storage::disk('public')->put($imageName, $img->encode());
+
             $validated['image'] = $imageName;
         }
  
