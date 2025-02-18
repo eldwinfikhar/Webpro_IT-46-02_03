@@ -103,7 +103,7 @@
         </div>
     </section>
 
-    <!-- Publications Section -->
+    <!-- Field of Research Section -->
     <section id="publication-section" class="publication-section mb-5 animate-on-scroll">
         <div class="container">
             <h2 class="text-center py-5">Field of Research</h2>
@@ -146,7 +146,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card card-animate shadow">
-                        <img src="/Assets/quadrotor-1.png" class="card-img-top my-3"
+                        <img src="/Assets/hw-ai.png" class="card-img-top my-3"
                             style="width: 90%; height: 250px;" alt="Quadrotor">
                         <div class="card-body text-center"  style="height: 80px;">
                             <h5 class="card-text">Empowering Hardware with Artificial Intelligent </h5>
@@ -155,7 +155,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 mb-4">
                     <div class="card card-animate shadow">
-                        <img src="/Assets/quadrotor-1.png" class="card-img-top my-3"
+                        <img src="/Assets/hw-cv.png" class="card-img-top my-3"
                             style="width: 90%; height: 250px;" alt="Quadrotor">
                         <div class="card-body text-center"  style="height: 80px;">
                             <h5 class="card-text">Embedded Systems with Computer Vision </h5>
@@ -172,21 +172,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Footer -->
-    <!-- <footer class="footer animate-on-scroll">
-        <div class="container">
-            <img src="/Assets/logo_telkom.png" class="img-fluid" style="max-height: 100px;">
-            <p>Hardware and Embedded System Laboratorium</p>
-            <p>Find us on <a href="#">@heslab</a></p>
-            <p>© Copyright 2024, All rights reserved</p>
-        </div>
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2519.4567174397025!2d107.62863989221058!3d-6.97117907951102!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e739aef42ad7%3A0x9fb4de87210b8009!2sTelkom%20University%20Landmark%20Tower!5e0!3m2!1sen!2sid!4v1614245835280!5m2!1sen!2sid"
-                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
-            </iframe>
-        </div>
-    </footer> -->
 
     <footer class="footer py-2" style="background-color: #0033A0;">
         <div class="container">
