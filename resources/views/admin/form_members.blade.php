@@ -35,12 +35,25 @@
                                 <tr>
                                     <td><label for="major" class="form-label">Major</label></td>
                                     <td>
+                                        <select class="form-control @error('major') is-invalid @enderror" id="major" name="major">
+                                            <option value="" disabled selected>Choose a major</option>
+                                            @foreach($majors as $major)
+                                                <option value="{{ $major }}" {{ old('major', $member->major) == $major ? 'selected' : '' }}>
+                                                    {{ $major }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        @if($errors->has('major'))
+                                            <span class="text-danger">{{ $errors->first('major') }}</span>
+                                        @endif
+                                    </td>
+                                    {{-- <td>
                                         <input type="text" class="form-control @error('major') is-invalid @enderror" id="major" name="major"
                                         placeholder="Enter member major" value="{{ old('major', $member->major) }}">
                                         @if($errors->has('major'))
                                             <span class="text-danger">{{ $errors->first('major') }}</span>
                                         @endif
-                                    </td>
+                                    </td> --}}
                                 </tr>
                                 <tr>
                                     <td><label for="position" class="form-label">Position</label></td>
@@ -100,7 +113,6 @@
                                             <img src="{{ asset('storage/' . $member->image) }}" alt="Current Photo" class="img-thumbnail mb-3" style="width: 150px;">
                                         @endif
                                             <input type="file" class="form-control @error('image') is-invalid @enderror" id="image" name="image">
-                                            <h6 class="mt-2 fst-italic fw-normal">*picture ratio must be 1:1</h6>
                                         @error('image')
                                             <div class="invalid-feedback">{{ $message }}</div>
                                         @enderror

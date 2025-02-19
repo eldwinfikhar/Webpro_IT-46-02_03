@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HESLab Gallery</title>
+    <link rel="icon" href="{{ asset('assets/Logo_hes.png') }}" />
     <link rel="stylesheet" href="/styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -23,6 +24,7 @@
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="/members">Members</a></li>
                     <li class="nav-item"><a class="nav-link" href="/publication">Publications</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://hesvault.site/">Peminjaman Alat Lab</a></li>
                     <li class="nav-item"><a class="nav-link active" href="">Gallery</a></li>
                 </ul>
             </div>
@@ -75,38 +77,17 @@
         <div class="container text-center animate-on-scroll">
             <h3 class="mb-4">Collaboration</h3>
             <div class="row justify-content-center">
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/LOGO_MOTION_LAB_(label hitam transparan).png" alt="img 1" class="img-fluid" style="max-height: 100px;">
+                <div class="col-3 col-md-2 mb-3">
+                    <img src="../Assets/logo_telkom.png" alt="img 5" class="img-fluid" style="max-height: 100px;">
                 </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/ai lab.png" alt="img 2" class="img-fluid" style="max-height: 100px;">
+                <div class="col-3 col-md-2 mb-3">
+                    <img src="../Assets/fif.png" alt="img 7" class="img-fluid" style="max-height: 100px;">
                 </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/computing lab.png" alt="img 3" class="img-fluid" style="max-height: 100px;">
+                <div class="col-3 col-md-2 mb-3">
+                    <img src="../Assets/SDG.png" alt="img 9" class="img-fluid" style="max-height: 100px;">
                 </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/cci.jpeg" alt="img 4" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/fif.png" alt="img 5" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/Seal_of_the_Central_Intelligence_Agency.svg.png" alt="img 6" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/lm-logo.svg" alt="img 7" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/boeing.png" alt="img 8" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/dls-logo-stack.svg" alt="img 9" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/porsche-dark-large-no-space-desktop-logo.png" alt="img 10" class="img-fluid" style="max-height: 100px;">
-                </div>
-                <div class="col-4 col-md-2 mb-3">
-                    <img src="../Assets/SpaceX_logo_black.svg.png" alt="img 11" class="img-fluid" style="max-height: 100px;">
+                <div class="col-3 col-md-2 mb-3">
+                    <img src="../Assets/RnEST-.png" alt="img 5" class="img-fluid" style="max-height: 100px;">
                 </div>
             </div>
         </div>
